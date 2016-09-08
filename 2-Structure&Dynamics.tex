@@ -1,0 +1,857 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry} 
+\geometry{letterpaper, margin=1in}
+\renewcommand*\rmdefault{ptm} % set to times
+
+\usepackage{natbib}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{textcomp}
+\usepackage{lscape}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage[ampersand]{easylist}
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\graphicspath{
+{/Users/Whitney/Dropbox/Aerial/Dissertation/images/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Network/KsPdRr09-14/FinalAnalysis/Figures/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Network/KsPdRr09-14/FinalAnalysis/Networks/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Network/KsPdRr09-14/FinalAnalysis/Stats/0914_Stats/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Network/KsPdRr09-14/FinalAnalysis/Stats/2y_Stats/}}
+
+\title{Chapter 2: \\ The Structure and Dynamics of Third-Order Alliances}
+\date{}
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%
+
+%What this is about: Introduce & define nested alliances
+Male bottlenose dolphins in Shark Bay, Western Australia participate in up to three levels or \textit{orders} of alliance formation within a large open society of resident dolphins. \textit{First-order} alliances are comprised of pairs and trios of adult males who work together to sequester and consort estrus females \citep{connor:1992a}. Most adult males also belong to teams of 4-14 individuals, or \textit{second-order} alliances, who work together to take females from other males and to defend against such attacks \citep{connor:1992a, connor:1992b}. In 2011, a \textit{third-order} of alliance formation was described in which two second-order alliances coordinated against other males during competitions over females \citep{connor:2011}. 
+
+% Why they're interesting: because they're the most complex non-human society outside of humans
+Such nested structure where interactions among the same components at different scales result in functional differences meets the same formula for \textit{complexity} used to describe the neural networks that constitute the human brain \citep{tononi:1994}. The nested structure of alliances in Shark Bay is the most complex described outside of humans, and while much work has been done to describe the function of first- and second-order alliances, to date little is known about third-order alliances, how the structure of alliance networks are maintained, or how they respond to change.
+
+%Why we should study them: dolphin society, social & cognitive complexity, conservation
+In R.A. Hinde's classic scheme, a population's social structure is described by its pattern of social relationships, which, in turn, are comprised of a history of interactions among individuals \citep{hinde:1976}. In this dissertation I traverse Hinde?s levels to examine the relationship between social complexity through quantitative analysis of social networks, and social cognition through fine scale observations of behavioral interactions. In doing so, I aim to lay a few boards in the growing methodological bridge towards better understanding the relationship between, and co-evolution of, complex societies and complex cognition
+\footnote{These concepts further elaborated in Ch. 1}.
+
+% Brief summary of the approach in this chapter (methods)
+In this chapter, we describe the relationships among three second-order alliances over a six-year period of time. During the study period, four of the original twenty-four males in the study group 'disappeared', and are presumed to have died, and new third-order relationships were forged. Coincident with the observed shifts in social relationships, the larger Shark Bay ecosystem experienced a cascade of changes including widespread seagrass die-off associated with an one of the strongest \emph{La Ni\~{n}a} events ever recorded in the region \citep{pearce:2011,thomson:2014}. 
+
+We use network analysis to describe the \textit{structure} and \textit{dynamics} of second- and third-order alliances, and discuss the implications of our results in terms of the function of third-order alliances. We test which features of the alliance network best predict the shifts observed between time periods. Finally, we use our findings to evaluate the complexity of third-order alliances and discuss how the kind of social complexity exhibited by this population may arise in through social interaction, which we evaluate further in Chapter 3. Research questions are further detailed in \S\ref{sec:researchQs}.
+
+% Broader impacts
+In addition to furthering our understanding of cetacean sociality and the relationship between social and cognitive complexity, such data can increase our understanding of how complex natural systems are organized, and inform management strategies by better understanding individual roles and the response of these systems to ecological disturbances. As well as benefiting species and demographic-based management, shifts in patterns of sociality among high trophic level species such as bottlenose dolphins may reflect, and therefore be used to monitor, ecosystem-wide change \citep{anthony:2000, lusseau:2004, estes:2009, new:2013}. For example, long-term monitoring of the health, behavior, and population dynamics of species such as gray whales \citep{moore:2008} and sea otters \citep{estes:2009} has allowed researchers to detect ecosystem-wide shifts, leading to the appointment of such long-lived and well-studied populations as "sentinels of change." % Keystone species? 
+%Observed shifts away from relative social equilibrium, such as that we observe in this study, may prove a useful technique in monitoring large-scale ecosystem change. 
+
+% Results (brief)
+% Interpretation of results (brief)
+
+\subsection{Background}
+
+\begin{framed}
+\noindent \textbf{Terminology} \\
+\begin{description}
+\item[Relationships and Alliances]
+We use the word \emph{relationship} to describe the frequency of two individuals associating over time (\S \ref{hwi}). A relationship is always dyadic, and may exist among any two individuals in the study population. An \emph{alliance} is a particular set of dyadic relationships cut at functional boundaries (\S \ref{function}). For example, a third-order \emph{alliance} is the complete set of dyadic relationships within and between two second-order alliances. Third-order \emph{relationships} 
+are just those dyadic relationships that include one individual from each of the two second-order alliances that comprise a third-order alliance
+\item[Networks]
+\item[Node] 
+\item[Edge] 
+\end{description}
+\end{framed}
+
+\subsubsection{Function}\label{function}
+Alliances are defined in terms of function: first-order alliances are comprised of pairs and trios of adult males who work together to sequester and consort estrus females \citep{connor:1992a}, and both second- and third-order alliances work together during large scale mate-competitions to steal and defend females from other groups \citep{connor:2015}. Participation in alliances is the predominant strategy governing male reproductive success in this population \citep{krutzen:2004}. Alliances are also found together outside of the mating context, traveling, foraging, and resting together, suggesting that the function of alliances may extend beyond the mating context. 
+%
+\footnote{Though coordinated group foraging strategies % such as seen in
+are rare in this population, one alliance foraging strategy called "lateral line" foraging may be an exception. This behavior has only been seen among allied males, and as the name suggests, describes two or more individuals dispersed 50-100m moving in parallel to one another, all exhibiting a diving and breathing pattern consistent with individual foraging. In this formation, alliances should be able to scan a greater area, potentially encountering higher rates of patchy prey and achieving higher foraging success together (though at the risk of increased resource competition). Resting in groups is seen widely among cetaceans, and is assumed to provide increased detection of and defense against predators \citep{connor:2000a}.}
+
+% Move to discussion: 
+It is curious that the second- and third- level of alliance formation should have the same functional role. \citet{connor:2015} hypothesize that third-order alliances benefit smaller second-order alliances through increased numbers during fights, and reported observations of surviving 'lone trios' from older second-order alliances that formed third-order relationships with other lone trios or second-order alliances. These observations suggest that in addition to their function in mate-competition, third-order alliances may function as  "back-up" alliances that allow for prolonged reproductive success when second-order alliances deteriorate. 
+
+\textit{In this study we examine the hypothesis that males who loose first-order allies respond by forming new first-order relationships within their alliance network, selecting from third-order allies if no second-order allies are available.} 
+% And we will reject this hypothesis...
+% If this was the case, NAT & WAB should have teamed up with KRO or IMP... but they didn't. 
+
+\subsubsection{Structure}
+% Structure- 2nd order
+The second-order alliance is considered the 'core-unit' in Shark Bay: most mature males belong to a second-order alliance, and membership remains stable for years to decades. Second order alliances vary in size from as few as 4 to as many as 14 individuals \citep{connor:2011}. Males in smaller second-order alliances tend to be more related than expected by chance, but this pattern does not hold in the largest second order alliances \citep{krutzen:2003}. 
+% Structure - 1st order
+In addition to belonging to a second-order alliance, males form first-order alliances with members of their second-order alliance. First-order alliances vary in (1) size: from two to three individuals, and (2) stability: some first-order alliances are stable over decades \citep{connor:2006}, and others are more labile, with membership that may shift between or even within a particular mating season \citep{connor:2001}.  
+% Structure - 3rd order
+Third-order alliances are larger groups containing members of two second-order alliances. The nature of the relationships that constitute third-order alliances is not well-understood.
+
+\textit{In this study, we are particularly interested in the global structure of third-order alliances, as well as the relationships that mediate third-order alliances (see \S\ref{sec:Roles})} % Relationships that mediate = social roles?
+% What is structure, and how is it studied in network analysis? 
+% Modularity, clustering, motifs, triads. Global and local structure. Complexity?
+
+% Alliances in other populations/species? Relevant? Where? - Discussion on social complexity 
+
+% Dynamics
+\subsubsection{Dynamics}
+% Temporal dynamics - shark bay (Connor et al 2001)
+Differences in the stability of first-order alliances has been reported since the earliest papers on alliances in Shark Bay \citep{connor:1992a,smolker:1992}. A spectrum of labile and stabile first-alliances have been observed, with evidence for a positive relationship between first-order alliance stability and consortship rate \citep{connor:2001}. Second-order alliance membership is remarkably stable, with groups forming around the age of sexual maturity and persisting through adulthood \citep{connor:2015}. Little is known about the stability of third-order alliances over time, or how the local and global structure of alliance relationships respond to loss of individuals or major ecological events.
+
+Though the dynamics of social systems has long been recognized, the tools to describe change in these systems over time has been limited. Recently, the potential to make progress on this front using social network analysis has been recognized \citep{krause:2007,croft:2008}, and researchers are actively developing methods to describe change in such networks over time \citep{pinter:2013,hobson:2013}. 
+%"Improving our ability to scale up from the individual to the population by establishing why certain patterns of association develop and how inter-individual association patterns affect population-level structure will revolutionize our understanding of the function, evolution, and implications of social organization" \citep[][Ch.1]{croft:2008}
+
+Although methods vary widely, many studies use a "snapshots" approach to study the change in network structure by comparing discrete time intervals \citep{pinter:2013}. 
+% For example...(elephants, hyena, guppies...) 
+The challenge for analyses focusing on structural change in social relationships is that the measures describing individual roles and dyadic relationships are based on repeated observations of polyadic events, and as such are inherently non-independent, and not amenable to standard statistical analyses \citep{farine:2015}. The current best solutions use matrix permutation procedures to test for correlations among discrete time intervals, and to examine how those correlations change through time \citep{henzi:2009, hobson:2013, farine:2015}. 
+
+\textit{In this study, we employ matrix permutation procedures to address the question of how different the three time periods in our study are, and follow with a detailed descriptive analysis of what changed in these social networks in terms of alliance relationships and related network attributes.}
+
+% Roles
+% Described for a limited number of individuals (REA?) but not quantified. Not well understood for 2nd or 3rd order groups (or 1st?)
+\subsubsection{Social Roles}\label{sec:Roles}
+The presence of individual \textit{roles} in the formation or maintenance of the Shark Bay alliance system has not been investigated. In his study of bottlenose dolphins in Doubtful Sound, New Zealand, \citet{lusseau:2004} used social network analysis to identify "brokers" as individuals located at the boundaries between communities, and whose temporary disappearance suggested their role in maintaining cohesion of the population. \citet{flack:2005, flack:2006} used social network analysis and a perturbation / knockout approach to identify the structural effects of "policers" (high-ranking individuals found to intervene and terminate conflicts between others) within a captive breeding group of pigtailed macaques. They found that when policers were present, group members had greater partner diversity and therefore larger social networks. In the absence of policers, there were higher rates of conflict, more "conservative" social interactions, and a less integrated society. Various studies of non-human primates have reported on the use of infants (and sometimes adult females) as "buffers" used by adult males to reduce the intensity of received aggression during encounters with other adult males \citep[e.g][]{kummer:1971,packer:1980,silk:1984}. Related to this effect, use of infants as a social "passport" has also been observed among non-human primates: e.g. \citet{itani:1959} reported on the use of an infant by an adult male Japanese macaque to gain access to the center of the troop where group leaders and higher ranking females congregate. Primates, typically sub-adult males, also make use of social "passports" when they immigrate to new social groups: \citet{cheney:1983} found that a majority of subadult males transferred to groups that included members of their previous groups, likely reducing the amount of aggression received from resident adults. \citet{boelkins:1972} found that immigrating subadult Rhesus macaques were accepted into new groups by forming an affiliative relationship (demonstrated by mutual grooming) with a resident male. Other important social roles found in mammalian societies include "leaders" (including matriarchs) who initiate food and route planning, migration patterns, or social fusions (e.g. \citet[hamadrayas baboons;][]{kummer:1971}, \citet[african elephants;][]{mccomb:2001}, \citet[orcas;][]{bigg:1990}, \citet[bottlenose dolphins;][]{lewis:2011}). %, and "alpha" individuals who occupy the highest position in a social hierarchy and reinforce that organization through [force and mediation]...
+
+\textit{In this study, we are interested in how individual roles influence the structure of the tiered alliance network. We replicate the analysis of \citet{lusseau:2004} to investigate the role of "brokers", but find the role as previously defined insufficient for understanding which individuals play the greatest role in maintaining third-order alliances in this system. We introduce a metric to better quantify this network position ("bStrength"), and call individuals with maximal bStrength values "liaisons". We also identify individuals who maximize within-group associations as "facilitators." Finally, we apply the concept of "passports" where evidence suggests that certain association patterns result from individuals tagging along %gaining admission?
+into social groups by associating with another individual, or "passport."} % tense
+% Bullmore & Sporns 2009: provincial hubs are connected mainly to nodes in their own modules, whereas connector hubs are connected to nodes in other modules. **Liaisons = connector hubs, Facilitators = provincial hubs.**
+% The importance of an individual node to network efficiency can be assessed by deleting it and estimating the efficiency of the ?lesioned? network. 
+% Efficiency is inversely related to path length but is numerically easier to use to estimate topological distances between elements of disconnected graphs. 
+
+% Function of roles (motivate correlation analysis) - WORK ON THIS; add to! 
+\textit{All individuals in this study are mature adult males in their reproductive prime. According to life history theory, all males should be working hard to increase their reproductive success, which in this population means forming and maintaining alliances. In this study we investigate the variation in the degree to which males participate in different levels of alliance formation in relation to their reproductive success.}
+
+\subsubsection{Social Complexity}
+The complexity of human and non-human societies has been a subject of discussion and investigation for decades, yet there is no consistent definition for social complexity \citep{whiten:2000}. Instead, there are rich descriptions of the features of complex societies, both in terms of their global structure, trends in life history, and the behaviors and challenges entailed for individuals.
+Here I'm focusing only on those identified features which describe the \emph{structure} of complex societies.
+Group size is often cited, though later works argue that group size alone is not sufficient to describe social complexity \citep{dunbar:1992/1993, bryne:1996}. Other features include: dense populations, relative stability, social turnover, social hierarchies, levels of social structure, cooperative groups, individual roles, variable/unpredictable relationships/encounters, fission-fusion grouping patterns, combinatoric richness, and alliances \citep{richerson:1999,deWaal:1992,kummer:1997,barett:2007,whiten:2000,wilkenson:2003}. 
+Complexity has been more formally defined in other fields, and some researchers have adapted these definitions to provide a more formal definition for social systems. \citet{strum:1987} state the that definition of complexity is "to simultaneously embrace a multitude of objects", and apply this to the social sphere of baboons. \citet{sambrook:1997, whiten:2000} draw from algorithmic information theory to derive their position that "one system is \textit{more complex} than another if it contains more elements and, even more importantly, more combinations or links between the elements." 
+% While this measure is appropriately low for completely regular strings, it is highest for random strings, and thus it too does not satisfy the above criterion for complexity - tononi:1998; on complexity measures derived from algorithmic information theory.
+% Unfortunately, Strum definition doesn't really lead anywhere... its not structural, but phenomenological. It describes the means of an individual. 
+
+The development of the study of complexity in neural systems has resulted in other useful advances: \citet{tononi:1994} recognized "functional segregation and global integration" as a hallmark of complexity in the brains of higher vertebrates. Building from Shannon entropy \citep{shannon:1949}, \citet{tononi:1994} introduced a measure for complexity ($C_N$) "shown to be high when functional segregation coexists with global integration, and to be low when the components of a system are either completely independent (segregated) or completely dependent (integrated)." This contribution has been used widely in the neurosciences, and has more recently been applied to the study of complex networks \citep{sporns:2002, sporns:2006}. Independent developments have found that complex networks across research domains have common characteristics including: small world topology (related to short mean path lengths), left-skewed degree distributions with fat tails (approaching power-law distributions in the case of scale-free networks), highly connected hubs, and distinct structural levels (indicated by (e.g.) modularity \citep{bullmore:2009}, multi-layeredness \citep{boccaletti:2014}, functional motifs, and high average clustering coefficients). 
+
+Due to their previously described nested structure and functional differences, we know that the Shark Bay alliance system meets the \citet{tononi:1994} definitional criteria for complexity, and % work on this statement
+% phenomenological? - individual cognitive implications - e.g. uncertainty in fission-fusion society
+implications for individuals navigating this system have been proposed \citep{connor:2006}. 
+%
+\citet{sporns:2006} found a close correlation between small-world index, functional motif number, and complexity ($C_N$), indicating the utility of $C_N$ for describing the complexity of a network.
+
+\textit{In this paper we apply the $C_N$ complexity measure to the dolphin alliance network to examine how how differences in the complexity of organization within groups may affect their ability to adapt to change. In particular, we test the prediction that, in response to change, the described "crystalline" structure of the PD alliance degrades more easily than the more densely interconnected and more "complex" structure of the KS alliance.} 
+% Counter point: if these groups rely on trio formations, and there are only 5 dolphins, what other response could be predicted? 
+% THIS!: Why didn't RR get "recruited" into PD?? Function of third order? Or KRO? Ended up with TEN KS and FIVE PD; why didn't the 10th KS switch into PD?? 
+
+% Form Entropy to complexity...?
+% Why might social groups that exhibit higher or lower complexity respond differently to change? (why might *complexity* be the measure we're interested in, as opposed to something like 
+
+% ADD TO DISCUSSION: Many of the recognized 'features' of complex systems are present in the SB alliance system: roles, nested structure, functional segregation & global integration... etc (see above). Except for the degree distribution, but here the network is probably too small (see "banana skins" article) to sufficiently evaluate (do for larger network!). 
+
+% C_obs / C_max = a measure that can be compared across systems? 
+
+% What we?re going to do about it: 
+% RCC's suggestion to "turn the paper on its head"?
+
+\subsection{Research Questions and Specific Hypotheses}\label{sec:researchQs}
+-- % Can't figure out how to get a line break here. 
+\begin{easylist}
+\ListProperties(Progressive*=.5cm)
+& What is the structure of second- and third-order alliance?
+&& We describe the global structure of the second- and third- order alliance using hierarchical clustering analysis, network analysis metrics, Shannon Entropy, and Complexity ($C_N$)
+&& We evaluate the hypothesis that second-order alliances vary in terms of their entropy, with some second order alliances showing a more 'crystalline' structure and others showing less order but more redundancy of relationships. 
+&& We evaluate the different kinds of social roles exhibited in the alliance network, and test the hypothesis that some individuals play a greater role in mediating third-order alliance relationships.
+& What are the dynamics of second- and third-order alliances?
+&& We describe the change in social networks from one time period to the next using the same metrics for describing global structure and roles indicated in (1). 
+&& We use a permutation analysis to test the hypothesis that the alliance network significantly changed from one two-year time period to the next. 
+&& We treat the loss of individuals as a natural perturbation study and describe the observed versus expected changes in the alliance network
+&& We use the quantitative metrics above in combination with observational data to provide a detailed descriptive analysis of the observed change in alliance relationships.
+& What is the function of third-order alliances?
+&& We use the prior analyses to examine the hypothesis that that males who loose first-order allies respond by forming new first-order relationships within their alliance network, selecting from third-order allies if no second-order allies are available. 
+& What features of alliance relationships best predict the observed patterns? 
+&& Life history theory predicts that similarly aged males should be investing resources into increased reproductive success. In this population, the predominant strategy for increasing reproductive success is through alliance formation, so all males should be trying equally hard to form and maintain alliance relationships. We test the hypothesis males who have the highest consortship rates are also the most 'central' in terms of their within- and between- group relationships. 
+&& We test the hypothesis that second-order alliances that have more redundant relationships (higher entropy) exhibit more resilience to change. 
+& How complex are 3rd order alliances? 
+&& We use the data collected in this study to evaluate the hypothesis that third-order alliances are qualitatively and qualitatively complex, and discuss how the kind of social complexity exhibited by this population may arise in through social interaction, which we evaluate further in Chapter 3. ?\end{easylist}
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Study Site}
+%e.g. Uda Walawe National Park (UWNP), Sri Lanka, is located between latitudes 6° 25? - 6° 34? N and longi- tudes 80° 46? - 81° 00? E, at an average altitude of 118 m above sea level. It encompasses 308 km2 around the catchment of the Uda Walawe reservoir. The study area comprises approximately 1/3 of this area, which includes tall grassland, dense scrub, riparian forest, secondary forest, a per
+
+\subsection{Data Collection} \label{sec:dataCollection}
+
+Data for this study were collected as part of a longitudinal study of bottlenose dolphins (\textit{Tursiops} sp.) in Shark Bay, Western Australia, in which procedural five-minute surveys of group membership, activity, and location are taken for all groups encountered during normal research operations \citep{smolker:1992,mann:2000}. An individual is considered to be a member of a group if it is within 10 meters of any other member \citep{smolker:1992}. For this study we restricted our analysis to completed 5-min surveys collected from 2009 to 2014, and to activity contexts that do not include foraging (when aggregations are likely to form), including:
+\begin{itemize}
+\item{Socializing: physical contact, splashing, little directional progress}
+\item{Resting: very slow travel or hanging still at the surface}
+\item{Traveling: slow to moderate speed swimming (1-3.9 mph) with consistent directional progress} 
+\end{itemize}
+Additionally, surveys were eliminated from analysis if they were a repeat observation of the same group in the same day, if the predominant distance between individuals was estimated by observers to be greater than 5-meters, or if the survey had been taken while the group was in the process of a large-scale competition (because these survey data would not have distinguished competing from cooperating sub-groups). 
+
+\subsection{Focal groups}
+This study focuses on the relationships among three well-studied and frequently-sighted "second-order" alliances, KS, PD, and RR. At start of this study all focal males were reproductively mature and full grown (aged 19 - 37 in 2009). The PD alliance had 'crystallized' by 1997, when their within-alliance HWI values rose from 26-73 in 1994-1995 to 75-91. The KS alliance had reached coherence by 2001, and the RR alliance by 2004. These three alliances represent the most frequently sighted alliances in the study site: with core home ranges overlapping the protected bay directly offshore of the research camp \citep{randic:2012}, it is often possible to find and observe these group even when conditions are poor in other parts of the study site. 
+% Relatedness??
+
+% bow-tie figure
+\begin{figure}[t]
+  \centering
+    \includegraphics[width=.8\textwidth]{bow-tie-network-borgatti}
+  \caption{A basic "bow-tie" network graph. Individuals (nodes) are represented as circles. Relationships between individuals (edges), are represented by lines. Image modified from \citep{borgatti:2013}.}
+  \label{fig:bowtie}
+\end{figure}
+
+\subsection{Measuring Association} \label{hwi}
+Associations among individuals were estimated by calculating pairwise half-weight indices (HWI) for all individuals in the study. In the equation below $N_{ab}$ is the total number of sightings in which individuals A and B were seen together, $N_{a}$ is the total number of sightings for individual A irrespective of individual B, and the converse is true for $N_{b}$ \citep{smolker:1992,connor:1992b,cairns:1987,whitehead:2008b}. Association matrices of pairwise HWI values were calculated using SOCPROG \citep{socprog}.
+
+{
+\[
+HWI =  100 \left(\frac{2N_{ab}}{N_a + N_b}\right),
+ \]
+ }
+
+\subsection{Community Structure}
+%Network analysis uses the density of connections within versus between groups (aka \textit{communities}) to describe the structure of a social network \citep{boccaletti:2006}. 
+Hierarchical clustering analysis is a commonly used method in which clusters are formed either by division or agglomeration of subjects. For this analysis, we use the "average-linkage" agglomerative method which begins with each individual in its own cluster, then iteratively combines clusters that share the smallest euclidean distance, defined by a similarity matrix of dyadic association indices. The nature of this method imposes a hierarchical model onto a social group, and the appropriateness of this model can be tested by calculating a cophenetic clustering coefficient (CCC), which is the correlation between the dyadic association indices and the level at which the dyads are joined on the dendrogram. A CCC greater than 0.8 indicates that the hierarchical model provides a good representation of the social network \citep{whitehead:2008b}. Significant groupings within the hierarchical model are detected by calculating a modularity score (Q) for each partition of the network. Modularity compares the number of internal links in the groups to how many one would expect to see if they were distributed at random. The peak modularity value for a hierarchical model is considered to represent a good community partition \citep{borgatti:2013, newman:2004}. In this study hierarchical clustering analysis was performed using the software programs SOCPROG \citep{socprog} and UCINET \citep{ucinet}. 
+
+Network graphs, in which individuals are represented by \textit{nodes} and relationships among individuals are represented by \textit{edges} (or lines), provide an informative representation of a network (see Figure \ref{fig:bowtie}). In this paper, edges represent dyadic half-weight indices, with thicker line widths corresponding to higher HWI values. Different algorithms can be used to influence the structure (i.e. circular, unstructured, etc) and spatial parameters of a network graph, with the goal of providing objective summaries of observed data. In this paper, we use the scale-free, force-directed \textit{ForceAtlas2} algorithm implemented in the program Gephi \citep{forceAtlas2,gephi}, to produce graphs where distances among nodes represent the strength of relationships (stronger associates and communities of associates are located closer together, in addition to having thicker connecting lines). To generate each network graph, we started from a  randomized spatial layout and ran the forceAtlas2 algorithm until it converged on a solution (~20 minutes). We repeated this process a minimum of three times per graph to ensure that the resulting graphs represented global solutions. 
+
+\subsection{Centrality of Members}
+There is an extensive set of measures for determining an individual's \textit{centrality}, or importance, in a social network  \citep[e.g.][]{wey:2008,whitehead:2008b,borgatti:2013,gazda:2015}. Many of the measures are related, and the choice of a measure should be made carefully to ensure that it addresses the particular research question. In this study, we are interested in the question, "are there individuals who are playing a greater role in maintaining third-order alliances?" This question requires a method for determining an individual's centrality relative to the different levels of social organization present in this social network (\S \ref{sec:structure}). Below I introduce some of the more commonly cited measures of centrality, focusing on those most relevant to the question at hand which we evaluate against other measures in this paper. 
+
+\begin{itemize}
+\item{Degree centrality: the number of edges (connections) an individual (\textit{i}) has \citep{borgatti:2013}. In the formula below, \textit{A} is the adjacency matrix describing all associations in the network, with $a_{ij}$ equal to 1 if the nodes \textit{i} and \textit{j} are joined by an edge, and 0 if not. In figure ~\ref{fig:bowtie}, $d_1  = 2$, and $d_3 = 4$. \\
+$$d_{i} =  \sum_{j}^{} a_{ij} $$
+}
+\item{Strength (a.k.a weighted degree centrality): the sum of the weighted edges connected to an individual. For a weighted network of association indices, this is the sum of all dyadic association indices for each individual \citep[ch. 5]{whitehead:2008b}. In the formula below, \textit{HWI} is the matrix of all association indices for pairs of individuals in the network, with $hwi_{ij}$ equal to the specific half-weight association index of nodes \textit{i} and \textit{j}: \\
+$$s_{i} =  \sum_{j}^{} hwi_{ij} $$
+}
+\item{Betweenness centrality: quantifies the frequency that a node falls along the shortest path between two other nodes. This measure has been used to identify social "brokers", or nodes who link communities, among other populations of free-ranging bottlenose dolphins \citep{lusseau:2004}. In the formula below, $g_{ijk}$ is the number of shortest paths (geodesics) connecting \textit{j} and \textit{k} through \textit{i}, and $g_{jk}$ is the total number of shortest paths connecting \textit{j} and \textit{k} \citep{borgatti:2013}. In figure \ref{fig:bowtie}, node 3 lies on the shortest path between nodes \{1,5\} and \{2,4\}, and would have the highest betweenness value within that network. \\
+$$b_{i} =  \sum_{j<k}^{} \frac{g_{ijk}}{g_{jk}} $$
+}
+% betweenness is one of the standard measures of node centrality, originally introduced to quantify the importance of an individual in a social network [18,19,37]  - boccaletti et al 2006
+
+\item{Eigenvector centrality: this value is high for nodes that are either (a) connected to many other nodes, or (b) connected to others who are themselves connected to many other nodes. It has been used to explain the likelihood of calf survival among bottlenose dolphins \citep{mann-stanton:2012}. In the formula below, \textit{A} is the adjacency matrix of associations, $a_{ij}$ is the binary value indicating association among \textit{i} and \textit{j}, \textit{E} is the eigenvector of \textit{A}, with eigenvalues $e_j$ calculated for each vector (individual associations). $\lambda$ is the characteristic value (eigenvalue) of the adjacency matrix \textit{A}, required so that the equations have a nonzero solution \citep{bonacich:1987,spizzirri:2011,borgatti:2013}. \\
+$$e_i = \lambda \sum_{j}a_{ij} e_j$$
+}
+\end{itemize}
+
+To provide the most direct assessment of the research question posed above, we utilized the results of our hierarchical clustering analysis to assign individuals to groups and subsequently calculate within- and between-group strength values, \textit{wStrength} and \textit{bStrength} accordingly, for all individuals in the social network. In the formulas below, \textit{HWI} is the matrix of all association indices for pairs of individuals in the network, with $hwi_{im}$ equal to the specific half-weight association index of nodes \textit{i} and \textit{m}, where \textit{m} represents \textit{i}'s external connections, and \textit{n} represent \textit{i}'s internal connections. \\
+$$bStrength_{i} =  \sum_{m}^{} hwi_{im} $$
+$$wStrength_{i} =  \sum_{n}^{} hwi_{in} $$
+
+% btStrength?
+
+These measures are related to the "E-I index" proposed by Krackhardt and Stern \citep{krackhardt:1988}, which describes how homo- or hetero-philic an individual is. In the formula below, (E) is the number of external connections to individual \textit{i}, and (I) is the number of internal connections to \textit{i}. In weighted networks (used here), E and I are the sums of weighted connections (HWI) for the external and internal networks. The E-I index ranges from -1 (all connections internal) to +1 (all connections external) \citep{crossley:2015, krackhardt:1988}. \\
+$$EI_i = \frac{E-I}{E+I}$$
+
+Though we report both measures, we have chosen to focus on \textit{bStrength} in this paper for two reasons. (1) The E-I index has been criticized because it does not account for the variable number of internal or external connections an individual has to choose from \citep{crossley:2015}. (2) Though the same criticism can be made of bStrength, it is the measure that most parsimoniously addresses the question at hand.
+
+In addition, we used UCINET to analyze our network for \textit{blocks} and \textit{cut-points}. A \textit{cut-point} is a node whose removal would lead to the fractionation of a network into independent (non-connected) \textit{blocks} \citep{croft:2008}. In figure \ref{fig:bowtie}, node 3 is a cut-point because its removal would lead to two network blocks comprised of nodes \{1,2\} and \{4,5\}. In our analysis, we were specifically interested in whether there were any cut-points positioned between second-order alliances. 
+
+\subsection{Dynamics Through Time}
+
+During the course of the six-year study, four of the focal males who had been regularly sighted for 10-15 years disappeared from all surveys and are presumed to have died. Two males from the 'KS' alliance disappeared between the end of the 2010 field season and the start of the 2011 season. The other two males from the 'PD' alliance both disappeared between the end of the 2012 field season and the start of the 2013 field season. This study uses a discrete "snapshots" approach \citep{deSilva:2011,pinter:2013} to examine the changing dynamics among members of this social network in two-year intervals. This method is well-suited to the seasonal nature of our data collection, and the two-year intervals correspond with the timing of the observed disappearances.
+
+% Consdered Lagged association rates: used to ask "how long do associations last" / how do relationships persist over time. (see Whitehead: Sperm Whales, Social Evolution in the Ocean 1997, Cantor 2012). - not appropriate for these data because of the nature of the data collection (in periods rather than continuous over time). 
+
+Restricting the association matrix to only those individuals that survived through subsequent time periods, we used a quadratic assignment procedure (QAP) to test the null hypothesis that each time period and the next following were not any more correlated than expected by chance \citep{borgatti:2013,crossley:2015}. 
+% QAP to test the hypothesis that the network underwent significant change from one time period to the next. 
+% By "restricting the association matrix" - this is essential doing the same as the knockout. 
+QAP calculates a correlation measure (we use Pearson's r) between two matrices, then compares the observed correlation to the correlations between thousands of pairs of independent matrices constructed from the input matrices. The resulting p-value indicates the proportion of correlations among these independent matrices that were as large as the observed correlation \citep[p.128]{borgatti:2013}. We used 50,000 permutations to ensure that the p-value had stabilized.
+
+%"The QAP technique correlates the two matrices by effectively reshaping them into two long columns as described above and calculating an ordinary measure of statistical association such as Pearson?s r. We call this the ?observed? correlation. To calculate the significance of the observed correlation, the method compares the observed correlation to the correlations between thousands of pairs of matrices that are just like the data matrices, but are known to be independent of each other. To construct a p-value, it simply counts the proportion of these correlations among independent matrices that were as large as the observed correlation" \citep[p.128]{borgatti:2013}.
+% QAP vs. MANTEL PERMUTATION??
+
+The manipulated association matrices described above constitute null, or "artificial knockout" models of the types of association patterns one would observe if the removal of individuals had no perceivable effect on the associations among those remaining. In addition to the QAP analysis, we contrast the null 2011-2012 model with the observed 2013-2014 model, focusing on the predicted versus observed change in within, between, and total Strength scores. 
+
+%\subsection{A Natural 'Knockout'}
+%To further examine the effect of the loss of individuals on the organization of social relationships, we constructed a topological "knockout" model by artificially removing individuals who later disappeared from the from surveys taken while they were still present \citep{flack:2006}. We used this database to generate an association network that represents an artificial "knockout" period, and contrast it here with the observed association network for the subsequent two-year period. This null model is used to describe the organizational effect of the loss of individuals if there is no significant change in alliance relationships coincident with their loss, beyond was is accounted for by their removal. We contrast this "knockout" model with the observed social network in the subsequent two-year period, focusing on the predicted vs. observed change in within-, between-, and total Strength scores. 
+
+\subsection{Social Roles and Reproductive Success}
+In this study we use individual \textit{consortship rate} as a proxy for reproductive success, where consortship rate (CSR) is defined as the number of peak mating season days (September 1 - Jan 1) in which each male was found in a consortship \citep{connor:1996a} (dCSR), divided by the total number of days that male was sighted (dOBS).
+$$CSR_i = \frac{dCSR_i}{dOBS_i}$$
+
+This variable was used to test the null hypothesis that there is no linear relationship between bStrength and CSR for the 2013-2014 period (where we have complete data for both variables). 
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%
+% ADD: BASIC NETWORK STATS = SMALL WORLD (L), DEGREE DISTRIBUTIONS, SIZE
+\subsection{What is a third-order alliance?}
+Third-order alliances were first described in the context of mate-competitions \citep{connor:2011}. Here we've restricted the sighting data we use to describe third-order alliances to explicitly \emph{exclude} these kinds of events (\S \ref{sec:dataCollection}). As a consequence, the results we report here are on those associations among third-order alliances that occur in non-competition contexts. Detailed descriptions of the interactions that occur among third-order associates will be described in Chapter 3, % VERIFY
+here we describe some of the basics of these types of associations. 
+
+Of the 1314 surveys used for this analysis, there were 138 surveys that included any KS males, 85 that included any PD males, and 98 that included any RR males. 
+Surveys were considered "third-order associations" if they contained individuals from two second-order alliances (KS and PD = 26, KS and RR = 11, PD and RR = 2). 
+The third-order KS-PD alliance was persistent throughout the study period; 11.66\% of all surveys in which any KS or PD males were present were third-order associations between the KS and PD males (26/223). When not competing, ratios of primary activities recorded among third-order groups were broadly similar to that of second-oder groups. However, third-order groups spent less time resting and traveling and more time socializing than second-order groups (Table \ref{table:activity}).
+
+\begin{table}[t]
+\begin{tabular}{| c | c | c |}
+\hline
+Primary Activity & 2nd-Order & 3rd-Order \\ \hline
+Rest & 49.2 \% & 43.6\% \\
+Travel & 33.8 \% & 25.6\% \\
+Socialize & 14.6 \% & 20.5\% \\ 
+Unknown & 2.4 \% & 10.3\% \\ \hline
+\end{tabular}
+\caption{Activities of 2nd and 3rd order alliances (KS, PD, RR combined)}
+\label{table:activity}
+\end{table}
+
+\subsection{Community Structure} \label{sec:structure}
+Hierarchical clustering analysis of half-weight association indices (HWI) among the 22 males present for more than two years out of the six-year study period detected the same three communities (Q= 0.400 at HWI = 0.201), that had been termed second-order alliances by field teams and found in previous work \citep{connor:2011}. Figure~\ref{fig:dendrogram} shows the second-order alliances in blue (PD), green (KS), and red (RR). The dendrogram also shows a distribution of first-order HWI, with some individuals nearing 1 (e.g. HWI \{NAT, WAB\} = 0.97). The model has a very high CCC (0.9754) indicating that the hierarchical model provides a good representation of the the relationships among these individuals.
+\footnote{It is important to note that while these metrics \textit{describe} first-, second-, and third-order alliances, levels of alliances are \textit{defined} functionally (see Introduction).}
+
+% REPORT NUMBER OF SIGHTINGS USED TO GENERATE EACH NETWORK
+
+% Average HWI for 1st order associates? 
+% Average HWI for 2nd order associates
+% Average HWI for 3rd order associates
+% Visible in network graphs!? <- add to caption
+
+The graph in Figure \ref{fig:2009-14-basic} is another representation of the same data. In this graph, we can readily identify the most stable first-order alliances as those trios with the thickest connecting lines ("edges"), second-order alliances as those with stronger within- than between-group associations (and who share a color assigned by the modularity analysis), and third-order alliances as weakly connected second-order alliances. % Identifying the most LIKELY 1st, 2nd, 3rd order alliances. These data are used in combination with consortship data to hypothesize and confirm alliance relationships. 
+
+\subsection{Central Members} 
+%Degree
+\textit{Degree}, or the number of connections per individual, ranged from 10 to 21 (the maximum number of possible connections in this network). Individuals with the highest degree values were from the PD and KS alliances, however within all three groups there was at least one trio that showed a higher number of connections relative to other individuals within the same second-order alliance (Table \ref{table:centrality}, Figure \ref{fig:centrality}a).
+
+% Strength
+\textit{Strength} (weighted \textit{degree}), was highest for individuals in the KS alliance: members of the KS alliance had the highest combined association values. This is very likely influenced by the large size of the KS alliance, and the tendency for all males in the second-order alliance to associate together, especially during the peak mating season (Table \ref{table:centrality}, Figure \ref{fig:centrality}b). 
+
+%Betweenness
+Males with the highest \textit{betweenness centrality} were also the individuals with the most connections in the network (those with highest \textit{degree}). This measure indicates members of the KS alliances as most central because they fall along the highest number of geodesic paths in the network. A trio in each of the PD and RR alliances also show relatively higher betweenness centrality values than the other members of their group (Table \ref{table:centrality}, Figure \ref{fig:centrality}c). 
+%
+All individuals showing high betweenness are potential 'brokers' of information \citep{lusseau:2004}, % VERIFY
+and may confer a social advantage to the peripherally connected individuals by acting as a 'passport' \citep{itani:1959} to allow these individuals to join groups to which they are not otherwise connected (such events were not captured in the survey data, else we would have seen a different pattern of betweenness). 
+A shortcoming of this measure is that it does not take into account any information about the position of the individuals connected in by those with the resulting high betweenness scores. For example, when BAR, a peripheral male who has low centrality scores across the board, is removed from the 2009-14 network, the already low betweenness scores for PRI WAB NAT NOG drop to zero, and those for FRE RID BIG DNG decline dramatically (Table \ref{table:betweenness-noBAR}).
+Thus 'centrality' indicated by and individual's betweenness score should be treated with caution as it may also indicate a failure to participate in relationships with more influential individuals. % A solution may be to use an "attribute weighted" betweenness calculation - see UCINET > Centrality > 
+% brokerage & centrality - two different things. There IS value to brokerage...but needs to be weighted. 
+
+\textit{Eigenvector centrality} emphasizes the members of the KS alliances as being the most 'well-connected' individuals in the network, and is highly correlated with strength (see Figure \ref{fig:centralityCorr}). Because this is a small network with most individuals participating in a large number of relationships, eigenvector centrality does not show strong discrimination among individuals (Table \ref{table:centrality}, Figure \ref{fig:centrality}d).
+
+%%%%
+Figure \ref{fig:IIstrength} shows the proportion of each individual's total strength that is within-group (darker color) versus between-group (lighter color). Nodes are sized based on an individual's between-group strength value. This graph and the associated values in Table \ref{table:centrality} indicate that in each alliance, there is one trio who more frequently participates in between-group associations. In this study we call these individuals \emph{liaisons}. Consistent with this role, in the network graph, these same individuals are found on the borders of their second-order alliance space closest to other second-order alliances.
+
+The distribution of \textit{bStrength} is relatively normal (Figure \ref{fig:bStrengthHist}). All individuals in this social network participated in some third-order associations, although two individuals (REA, LAN) show significantly low bStrength values (z $<$ -2 ), closely followed by KRO and BAR (z $<$ -1). The individuals with the highest bStrength values for the entire 6-year period were PON, QUA, PAS, NAT, and WAB (z $>$ 1). 
+
+\subsection{Dynamics Through Time}
+
+To examine the change in alliance relationships through time, we sub-divided the six-year dataset into three periods: 2009-2010 (T1), 2011-2012 (T2), and 2013-2014 (T3), corresponding to the loss of four individuals. 
+
+\subsubsection{T1: 2009-2010}
+
+Figure \ref{fig:net0910} summarizes the group relationships in 2009-2010. The third-order alliance relationship between PD and KS was already present (Q = 0.3522 at HWI = 0.2788; CCC = 0.9657), and no cut-points were found. RR males did not share associations with PD or KS males during this period. Three males within the PD group (PRI WAB NAT) showed highest between-group strength values (2.93 to 3.06), indicating their increased role in maintaining this third-order alliance (Table \ref{table:bStrength_2y}). Among the KS, another trio (MID PON QUA) showed the highest between-group strength values (1.63 to 1.80). Both trios were stable 1st-order alliances, and both were positioned on the border between the two second-order alliances in the network graph (Figure \ref{fig:net0910}). % !!! NEED TO CALCULATE THIS; NOT ASSUME BASED ON ASSOCIATION RATE ALONE !! 
+
+\subsubsection{T2: 2011-2012}
+After October 2010 two of the KS males (BOL and MID) were no longer sighted and were assumed to have died\footnote{It is very unlikely that these males were still alive but went undetected by observers, (a) because their long-term alliance, KS, was frequently sighted without them, and (b) because their core range fell within the most often-surveyed portion of the research area.}. Figure \ref{fig:net1112} shows the network graph for this period. There were still no indications of a relationship between either group and the RR alliance. The third-order alliance relationship between KS and PD was maintained (Q =0.4617 at HWI = 0.21341, CCC = 0.9855). BAR had a low number of sightings (n=4) with either KS or PD. No cut-points were detected. The same three PD as in the prior period showed high between-group strength values (PRI WAB NAT: 1.72, Table \ref{table:bStrength_2y}). Within the KS, two of the high bStrength males from the prior period (PON QUA) were again among the trio with the highest bStrength values (1.35). Interestingly, during this period PAS moved in to the \emph{liaison} role previously assumed by MID. % SAY MORE HERE
+
+Could we have predicted these shifts? Possibly: 
+In 2009-2010 (Figure \ref{fig:net0910}, Table \ref{table:bStrength_2y}), PON QUA MID formed a stable trio within KS. The strongest KS associates to either PON and QUA other than MID included BOL, CEB, DEE and PAS (HWI 0.45 to 0.54; Table \ref{table:assoc0910}). BOL disappeared, and CEB and DEE were among the males with the lowest bStrength values for the T1 period. PAS and NOG had the next highest bStrength values (1.2 and 1.33, respectively), but PAS had the stronger relationship to both PON and QUA, and was not part of a stable trio. Based on these qualifications, he may have been the best candidate to fill MID's vacant role. % REALLY NEED TO DO CSR!!
+
+Changes corresponding to the loss of BOL: 
+In 2009-2010, BOL had among the lowest values for bStrength (0.91), but was in the highest end of the distribution for wStrength values (5.3) (Table \ref{table:bStrength_2y}). % Place for EI index? 
+He was not in a stable trio; instead he belonged to the subset of KS males who formed more stable pairs and rotated individuals to form a trio during consortships (Figure \ref{fig:dendrogram0910}). His high wStrength value is due to a broader set of relationships at mid-range HWI's, rather than a limited set of relationships with very high HWIs (Table \ref{table:assoc0910}). Thus, rather than acting as a liaison to other groups, BOL's association pattern seems to have provided some of the social \emph{webbing} that may facilitate coherence within large second-order alliances. This role seems to be redundant within the larger KS alliance: after his disappearance, all KS males except the three T2 liaisons showed increased wStrength, with the highest values belonging to DNG and NOG, followed by MOG IMP and KRO (Table \ref{table:bStrength_2y}). DNG NOG KRO were a stable trio in T1, and continued in this capacity through the T2 period. In T2 MOG formed a stable trio with CEB DEE. In T1, CEB's closest associate had been BOL, and DEE's had been PAS. Given the outcomes for BOL and PAS, it may have been natural for CEB and DEE to form a pair in T2. Their inclusion of MOG required the disintegration of the formerly strong MOG-IMP pair, but allowed the KS alliance to form three trios, a more stable state for these trio-consorting males. Though the tenth member of a now stable group, IMP showed increased, rather than decreased, wStrength values from T1-T2 with a broad distribution of mid- to high-level HWI's, filling BOL's role as the social \emph{webbing} that helped this larger second-order group to maintain its coherence during the T2 period (Tables \ref{table:bStrength_2y} and \ref{table:assoc1112}).
+
+\subsubsection{T3: 2013-2014}
+The most notable shift in alliance relationships happened between the 2011-12 and 2013-14 periods. The peripheral PD male "BAR" and the central PD male "PRI" were not sighted during any surveys after November 2012 and are presumed to have died. In addition to the survey data used in this analysis, in 2013 and 2014 we were conducting intensive focal follows on the KS and PD groups. From July through mid-November 2013, there were no surveys or follows that included RR males with KS or PD males other than in a foraging capacity, % despite having seen members of these groups on x of y days.
+similar to the prior periods. In mid-November 2013 we witnessed a sudden inclusion of the RR, with KS most frequently, though also with PD, in all contexts. This association has continued through the most recent (2015) field season (Figure \ref{fig:net1314}). 
+% DOUBLE CHECK 2013 SURVEY RECORDS PRIOR TO NOV 20
+Modularity and hierarchical clustering analysis of this period assigns individuals to three clusters, corresponding to the KS, PD, and RR groups identified by observers (Q = 0.3112 at HWI = 0.1296, CCC = 0.9601). No cut-points were detected. Interesting shifts occurred in terms of bStrength centrality: the three RR males observed most commonly with the KS and PD groups showed the highest overall bStrength values, and the highest proportion of between to within-group strength observed in any period, suggesting that the trio may have been leaving (dissolving) the RR to merge with KS. % 2015 data? 
+Within the KS alliance, the same three individuals as in the prior period showed the highest values of bStrength within their group (1.52 to 1.69), comparable to the T2 period. Among PD males, NAT and WAB, first-order associates of PRI, showed a notable decrease in bStrength, while the remaining three males in the PD alliance increased bStrength relative to T2 (Figure \ref{fig:bStrength_2y}). Within the PD alliance additional shifts are apparent: wStrength declined for all PD males (Figure \ref{fig:wStrength_2y}), and the average HWI between the two first-order PD alliances declined precipitously from 0.717 in T2 to 0.132 in T3 (Figures \ref{fig:dendrogram1112} and \ref{fig:dendrogram1314}). % PD splitting too?  
+
+% Individuals
+% BAR
+The loss of BAR was unlikely to have precipitated these changes: with the lowest bStrength and wStrength values among all PD males during both T1 and T2 (Table \ref{table:bStrength_2y}), and a betweenness value of 0 (Table \ref{table:centrality}) % AND VERY LOW / NON-EXISTANT CONSORTSHIP RATES
+there is no indication of that BAR engaged in either the \emph{liaison} or \emph{webbing} roles within the PD alliance. 
+% PRI
+However, some of the observed changes may be attributable to the loss of PRI.
+
+In T1 and T2 PRI WAB NAT were the most stable first-order alliance in the KPR network (HWI = 0.97 to 1.00; Figures \ref{fig:dendrogram0910}, \ref{fig:dendrogram1112}). All three males, including PRI, had the highest bStrength values for the PD alliance in T1 and T2, indicating their role as \emph{liaisons} to the KS alliance. After PRI's disappearance bStrength for WAB and NAT declined, suggesting that PRI may have been mediating their third-order associations. One prediction stemming from these observations is that the HWI between the KS and PD alliances would have decreased with the loss of PRI. Instead, 
+very little change was recorded ($HWI_{T2}$ = 0.126, $HWI_{T3}$ = 0.124), owing to the simultaneous increase in bStrength for the remaining PD trio (Figures \ref{fig:dendrogram0910}, \ref{fig:dendrogram1112}, Table \ref{table:bStrength_2y}). The same is not true for the observed change in wStrength; as previously noted all males decreased in wStrength after the loss of PRI, suggesting that he was also playing an important role in the social \emph{webbing} of the PD alliance. 
+
+\subsection{QAP}
+% QAP
+QAP analysis of the T1 knockout model ($T1_{ko}$) and T2 showed high correlation between the two time periods (r = 0.8275, p $<$ 0.001). The correlation between the T2 knockout model ($T2_{ko}$) and T3 showed a lower, though still significant correlation (r = 0.7569, p $<$ 0.001). In both cases we reject the null hypothesis that there is no correlation between time periods. Despite the disappearance of individuals, the overarching pattern is that relationships persist over time. 
+%What I would really like to test is whether the network itself shows significant change in terms of average HWI and re-organization of HWI's among dyads. A paired samples test (Wilcoxon signed rank) is basically what I'm looking for, because it tests for sig. differences in mean rank between periods (and comes out significant). The problem is that the "samples" (dyadic association rates) are not independent, so such a test is not appropriate. The closest I can come to testing this hypothesis is to do a QAP / Mantel permutation to test the null hypothesis that the observed correlation is not significant wrt matrices correlated by chance (e.g. that the observed (high) correlation value is significant); which it is. 
+
+At the individual level, we see that there is some significant change. 
+% "Knockout" 
+Figure \ref{fig:wStrengthKO} shows the expected versus observed change in within-group strength values. The $T2_{ko}$ model predicted that only PD males would show a decrease in within-group strength, as both removed males were part of the PD alliance. The observed change shows that all males in the social network decreased their within-group strength values. A Wilcoxon signed-ranks test indicated that the change we saw from T2-T3 differed significantly from the expected change from $T2_{ko}$ to T3 (Z = 3.296, p $<$ .001, r = 0.623).
+
+In figure \ref{fig:bStrengthKO} we see the expected versus observed change in between-group strength values. Here, the $T2_{ko}$ model predicted that all KS males would show a decrease in bStrength values, reflecting the loss of their third-order PD associates. PD males were not expected to show a change in bStrength. The observed change shows a global \textit{increase} in between-group associations, with the exception of the first-order associates of the lost PD male PRI, who showed a large \textit{decrease} in between-group associations. The Wilcoxon signed-ranks test does not show that the change we saw from T2-T1 differed significantly from the expected change from T1-KO, likely because of the two outliers (Z = -1.9147, p = 0.058, r = -0.362). 
+
+Figure \ref{fig:bStrengthKO_AMA} shows the expected versus observed change in between-group strength, but this time taking into account the wider adult male alliance network to examine the possibility that males had increased between-group associations outside the KPR network. The pattern is largely similar to the KPR network, though accentuated in both directions for the members of the PD alliance.
+
+% This analysis tests whether the network changes through time. The conclusion is YES, but it does not test whether it was the loss of individuals, or some other confluence of factors (e.g. ecological) that initiated that shift. IF we had data on ecological change (e.g. change in diameter of fat cells), we could use that to test whether the organization of the social structure was better predicted by it. Or other factors, such as: time spent foraging, consortship rate, petting, relatedness - (MRQAP). There's also the possibility of a bayesian-adapted Monte Carlo method that would test how likely the observed network was against a set of random networks, GIVEN the prior period. Could do this for 2009-10 to 2011-12, and for 2011-12 as prior for 2013-14. Possibly even by constructing the random null models to have the same total network HWI as in teh latter period. Since the RR have ZERO S/R/T associations with KS or PD prior to 2013-14, is it possible that this would ever result in anything other than significance? Also: in the end, would we be testing if it was the individuals / prior condition that predicted the shift, whether the observed was sig. different from a random model? 
+
+\subsection{Social Roles and Reproductive Success}
+For the 2013-2014 period there was a significant positive correlation ($r$ = 0.648, $p <$ .01, $R^{2}$ = 0.421) between individual consortship rate (CSR) and bStrength (see Figure \ref{fig:corrCSR}). Individuals who participated in higher rates of third-order association also had a higher consortship rate. 
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions / Discussion}
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Community Structure}
+Based on this analysis, we can conclude that the community structure of the three 2nd order alliances that we focused our investigation on fits a hierarchical model in which individuals are modularly organized at three levels of association, in agreement with prior studies \citep{connor:2011}. The representation of pairwise associations as a network graph allows for an informative visualization of all three levels of alliance. 
+% Wider social network? AND BORDER-LAND LIAISONS; NOT DETECTIBLE IN THE CLUSTER DIAGRAM!
+% Cluster diagram good for some things; network for others.. 
+% Highly redundant system!! 
+% Lusseau 2004: "In many networks, the removal of high-betweenness individuals is a very effective way of destroying network connectivity (Holme et al 2002)...However, unlike some other social networks, this network does not disintegrate very fast when high-betweenness vertices are removed" 
+
+\subsection{Central Members}
+We reported on several metrics used to identify central members of social networks, and concluded that bStrength, the sum of the half-weight association indices between an individual and associates external to their 2nd-order alliance, provided the most direct metric to address the question of whether certain individuals were playing a greater role in maintaining third-order relationships. We found that within each second-order alliance, there was one trio who participated in higher rates of third-order association than their fellow group members, while maintaining similar levels of within-group associations. Interestingly, these subunits also constituted the strongest first-order associations in the study group. By participating in higher-levels of between-group associations, these individuals appear to be playing a critical social role in mediating third-order alliances. 
+
+% Multi-level alliances, social & cognitive complexity
+% Social capacity? Lusseau 2004 also reports a betweenness maximum of 7.32
+
+\subsection{Dynamics Through Time}
+% ADD: CHANGING ROLES OF INDIVIDUALS THROUGH TIME; IMPORTANCE OF 'LIAISONS' 
+We used a discrete "snapshot" approach to examine the changes in this social network over three two-year intervals. QAP analysis indicated that each time period was significantly correlated to the preceding period, but that the T2-T3 periods were less correlated than the T1-T2 periods. Visual analysis of the network graphs for these associated periods highlights just how different the T3 period was: the RR alliance, previously not associated with either KS or PD, became a close associate of both alliances. Major fractionation is apparent in the PD alliance. We used an artificial "knockout" approach \citep{flack:2006} to predict change in between- and within- group associations from one time period to the next. When these models were compared to the observed networks, we found systemic shifts in the T3 period that were not predicted by the knockout models. 
+
+We offer two explanations for why the T3 period showed such differences: (1) Given the strength of the third-order relationship between PRI WAB and NAT, and the radical decrease in bStrength values for WAB and NAT, it is possible that PRI was initiating the observed between-group associations, and may have acted as a passport \citep{itani:1959} for WAB and NAT. However, this explanation fails to account for the widespread changes in both within and between-group associations across all members of the social network. (2) For 10 weeks in the Austral Summer of 2010/2011 the Western Coast of Australia experienced a marine heat wave associated with one of the strongest \emph{La Ni\~{n}a} events ever recorded \citep{pearce:2011}, with sea-surface temperature in Shark Bay reaching its peak at \texttildelow 4$^{\circ}$C above average in February 2011. High temperatures were sustained at \texttildelow 2$^{\circ}$C above average in February 2012 and 2013 \citep{caputi:2014}. Coincident with this event, the median coverage for the most common seagrass (\textit{A. antartica}) experienced a 97\% dieback, green turtle health status declined precipitously from 2011-2013, and abundances for scallops and blue swimmer crabs were sufficiently low to necessitate fisheries closures in 2012 \citep{thomson:2014, caputi:2014}. Given the ecosystem-wide nature of these shifts, an effect on the bottlenose dolphin population in Shark Bay would seem inevitable, and as secondary/tertiary consumers such effects are likely to have been delayed. We suggest that the network-wide shifts documented in T3 are a by-product of the temperature anomalies experienced in Shark Bay just prior to that period. 
+
+This study highlights the importance of long-term studies capable of documenting change in individual's life histories: in order to manage populations as they continue to experience more frequent and/or intense climatic events, we need to be able to predict their response to such events. Here we see a substantial re-organization of social relationships coincident with the loss of key members and an extreme climatic event, suggesting some resilience for the bottlenose dolphins at this point in time. % similar to findings of Ansmann et al 2012 - Oz bottlenose
+However, further research is required to fully understand the effect of this event on the dolphin population. 
+
+\subsection{Social Roles and Reproductive Success}
+For the 2013-14 period, we found that individuals who participated in high combined rates of association (total Strength) also had high consortship rates, and that similar (though slightly weaker) correlations existed for within-group Strength and CSR as well as between-group Strength and CSR. The most gregarious males in terms of their alliance relationships had the highest consortship rates, suggesting either that gregariousness is directly related to consortships, or that males who invest more heavily in alliance relationships reap the benefits of higher consortship rate. This may occur via increased odds of inclusion in a consortship group or by increased ability to attract allies during competitions. A prior study \citep{connor:2001} found a significant relationship between consortship rate and alliance stability; this variable, as well as first-order alliance strength (e.g. maximum HWI found for each sub-group using the hierarchical clustering procedure) may provide further insight into the correlations found here. 
+
+\subsubsection{Cognitive Systems}
+% Implications for cognition, social & cognitive complexity
+Alliance networks are distributed cognitive systems: they are the emergent property of groups of individuals interacting through time, and whose structure cannot be determined by a single individual \citep{hutchins:1995a}. 
+They are affected by each new interaction even as those interactions occur within the \textit{setting} \citep[c.f.][]{lave:1988} constructed by the history of such engagements. The social network is brought into explicit relief each time individuals recognize and coordinate with their allies, and compete against their foes. The connections among individuals described in this chapter represent a history of individuals enacting \citep[c.f.][]{VRT:1991} their relationships as they interact as dyads, consortship groups, alliances, and competitors. 
+
+% Connor et al. (1999) suggested that frequent partner switching might be important in maintaining the structural integ- rity of the super-alliance. - Connor et al 2015
+
+
+%\subsection{The Wider Social Network}
+% delayed benefits?? competitions were removed... No reason for these two variables to be correlated per se... (except that trios are found together....
+
+% Climate change assaults. Individuals as sentinels of change.
+% Condition & reproduction
+
+% Other measures of centrality used in the literature, results.
+% Betweenness centrality
+%However, one downside of betweenness centrality is that it is not sensitive to the importance of the members that are being connected into the network. For example, BAR (the blue individual furthest to the left on each diagram) is only very weakly connected to the PD alliance (see figure \ref{fig:dendrogram}). 
+%
+%In addition, longterm project records show that he has only been observed in two confirmed consortships with any other males
+%... [in the (x) years that he has been regularly sighted. In comparison, other males in the PD alliance have participated in (x) confirmed consortships during the same period of time.] % CHEC K PROJECT RECORDS !! %
+%
+%When this individual is removed from the social network, the betweenness value for the three PD emphasized here decreases by ... [half?] 
+% VALUE !! % 
+
+% SOCIAL CAPACITY?? IF total network strength, tot KPR strength added to table..? 
+% If social capacity hypothesis is true, should see INCREASE in total strength relative to expected. Talk about this in the "knockout" 
+
+% Change through time: 
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% FIGURES % 
+%%%%%%%%%%%%%%%%%%%%%
+
+\section{Figures and Tables}
+\clearpage
+% Figures  - Cluster Dendrogram
+\begin{figure}[t]
+\includegraphics[width=.9\textwidth]{0914_KPR_Cluster}
+\caption{Results of hierarchical cluster analysis / cluster dendrogram. Distance = euclidean. Clustering method =  average}
+\label{fig:dendrogram}
+\end{figure}
+
+% Figure - Modularity
+\begin{SCfigure}[][h]
+\includegraphics[width=.6\textwidth]{0914_KPR_Modularity}
+\caption{Modularity}
+\label{fig:modularity}
+\end{SCfigure}
+
+% Figure - Basic Network Graph (2009-14)
+\begin{figure}[b]
+  \centering
+    \includegraphics[width=1\textwidth]{0914_KPR_Network}
+  \caption{Network graph of HWI association data. Nodes are individuals, edges (lines) are dyadic associations. Edge width and node distance indicate the strength of relationships. Second-order alliances are colored based on the result of the hierarchical clustering analysis.}
+  \label{fig:2009-14-basic}
+\end{figure}
+
+% Barplots of centrality measures
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{centralityBarplots}
+\caption{Barplots of centrality measures (2009-14). Lines represent mean (long dash) and mean +/- 1SD (dotted). Very few values are 2 or more SD from the mean.}
+\label{fig:centralityCorr}
+\end{figure}
+
+% Correlation plot of centrality measures
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{centralityMeasures_corr}
+\caption{Correlation plot of centrality measures (2009-14)}
+\label{fig:centralityCorr}
+\end{figure}
+
+% Table of centrality values discussed in methods
+\begin{table}[t]
+\begin{tabular}{| c | c || c | c | c | c || c | c | c |} %bStrength, tStrength, wStrength
+\hline
+ID & Alliance & Degree & Strength & Eigenvector & Betweenness & wStrength & bStrength & EI Index \\ \hline
+CEB & KS & 20.0 & 5.99 & 0.29 & 4.14 & 4.86 & 1.13 & -0.62\\
+DEE & KS & 20.0 & 6.09 & 0.3 & 4.14 & 4.96 & 1.13 & -0.63\\
+DNG & KS & 19.0 & 5.3 & 0.26 & 2.25 & 4.46 & 0.84 & -0.68\\
+IMP & KS & 20.0 & 5.96 & 0.29 & 4.14 & 4.95 & 1.01 & -0.66\\
+KRO & KS & 15.0 & 3.43 & 0.17 & 0.0 & 2.85 & 0.58 & -0.66\\
+MOG & KS & 18.0 & 5.88 & 0.29 & 1.36 & 4.82 & 1.06 & -0.64\\
+NOG & KS & 16.0 & 4.87 & 0.23 & 0.46 & 4.03 & 0.84 & -0.66\\
+PAS & KS & 21.0 & 6.23 & 0.3 & 5.69 & 4.62 & 1.61 & -0.48\\
+PON & KS & 21.0 & 6.48 & 0.31 & 5.69 & 4.93 & 1.55 & -0.52\\
+QUA & KS & 21.0 & 6.49 & 0.31 & 5.69 & 4.9 & 1.59 & -0.51\\ \hline
+BAR & PD & 11.0 & 1.49 & 0.06 & 0.0 & 1.22 & 0.27 & -0.64\\
+BIG & PD & 19.0 & 4.57 & 0.17 & 2.25 & 3.33 & 1.24 & -0.46\\
+FRE & PD & 19.0 & 4.64 & 0.17 & 2.25 & 3.47 & 1.17 & -0.5\\
+NAT & PD & 16.0 & 4.82 & 0.19 & 0.46 & 3.21 & 1.61 & -0.33\\
+PRI & PD & 16.0 & 4.6 & 0.18 & 0.46 & 3.19 & 1.41 & -0.39\\
+RID & PD & 19.0 & 4.61 & 0.17 & 2.25 & 3.39 & 1.22 & -0.47\\
+WAB & PD & 16.0 & 4.87 & 0.19 & 0.46 & 3.23 & 1.64 & -0.33\\ \hline
+COO & RR & 15.0 & 3.69 & 0.09 & 1.11 & 2.67 & 1.02 & -0.45\\
+LAN & RR & 10.0 & 2.39 & 0.04 & 0.0 & 2.26 & 0.13 & -0.89\\
+REA & RR & 10.0 & 1.41 & 0.03 & 0.0 & 1.29 & 0.12 & -0.83\\
+SMO & RR & 15.0 & 3.71 & 0.09 & 1.11 & 2.68 & 1.03 & -0.44\\
+URC & RR & 15.0 & 3.76 & 0.09 & 1.11 & 2.74 & 1.02 & -0.46\\ \hline
+\end{tabular}
+\caption{Centrality Measures}
+\label{table:centrality}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c|c|} \hline
+ID&Betweenness-wBAR&Betweenness-woBAR \\ \hline
+PAS&5.691&4.141 \\
+PON&5.691&4.141 \\
+QUA&5.691&4.141 \\
+CEB&4.141&4.141 \\
+DEE&4.141&4.141 \\
+IMP&4.141&4.141 \\
+BIG&2.247&1.364 \\
+DNG&2.247&1.364 \\
+FRE&2.247&1.364 \\
+RID&2.247&1.364 \\
+MOG&1.364&1.364 \\
+COO&1.111&1.111 \\
+SMO&1.111&1.111 \\
+URC&1.111&1.111 \\
+NAT&0.455&0 \\
+NOG&0.455&0 \\
+PRI&0.455&0 \\
+WAB&0.455&0 \\
+BAR&0&NA \\
+KRO&0&0 \\
+LAN&0&0 \\
+REA&0&0 \\ \hline
+\end{tabular}
+\caption{Betweenness comparison with and without BAR}
+\label{table:betweenness-noBAR}
+\end{table}
+
+
+% Figure - network graphs of centrality measures
+\begin{figure}[t]
+\begin{tabular}{cc}
+\includegraphics[width=.5\textwidth]{0914_KPR_Degree} & \includegraphics[width=.5\textwidth]{0914_KPR_Strength} \\
+(a) Degree & (b) Strength \\
+\includegraphics[width=.5\textwidth]{0914_KPR_Betweenness} & \includegraphics[width=.5\textwidth]{0914_KPR_Eigenvector} \\
+(c) Betweenness & (c) Eigenvector \\
+\end{tabular}
+\caption{Centrality measures. 2009-14}
+\label{fig:centrality}
+\end{figure}
+
+% Within & Between Group Degree Network
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{0914_KPR_bStrength_pieCharts}
+\caption{Inter/Intra- group strength. 2009-2014. Nodes are sized based on each individuals bStrength value. PieCharts depict the ratio between wStrength (dark color) and bStrength (light color). Each alliance has one with higher overall and relative bStrength values.}
+\label{fig:IIstrength}
+\end{figure}
+
+% bStrength Histogram
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{bStrengthHistogram}
+\caption{bStrength distribution. 2009-14}
+\label{fig:bStrengthHist}
+\end{figure}
+
+% bStrength Zscore
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{bStrengthZScore}
+\caption{bStrength Z-scores. 2009-14}
+\label{fig:bStrengthHist}
+\end{figure}
+
+%% TABLE OF bStrength values for all males for each time period. - ADD wStrength, netStrength, kprStrength?? 
+\begin{table}[t]
+\begin{tabular}{| c | c || c | c | c || c | c | c |} \hline
+\cline{3-8}
+& & \multicolumn{3}{ c ||}{bStrength} & \multicolumn{3}{ c |}{wStrength} \\ \cline{3-8}
+ID & Alliance & 0910 & 1112 & 1314 & 0910 & 1112 & 1314 \\ \hline
+BOL & KS & 0.91 & NA & NA & 5.3 & NA & NA \\
+CEB & KS & 0.85 & 0.75 & 1.36 & 5.28 & 5.88 & 4.6 \\
+DEE & KS & 0.92 & 0.57 & 1.42 & 5.17 & 5.7 & 4.81 \\
+DNG & KS & 1.12 & 0.54 & 0.81 & 4.35 & 5.97 & 3.57 \\
+IMP & KS & 0.58 & 0.81 & 1.19 & 4.74 & 5.9 & 4.6 \\
+KRO & KS & 0.99 & 0.58 & 0 & 4.12 & 5.28 & 0.25 \\
+MID & KS & 1.63 & NA & NA & 4.82 & NA & NA \\
+MOG & KS & 0.83 & 0.85 & 1.13 & 4.75 & 6 & 4.42 \\
+NOG & KS & 1.33 & 0.52 & 0.67 & 4.14 & 5.62 & 2.72 \\
+PAS & KS & 1.2 & 1.5 & 1.69 & 5.08 & 4.87 & 4.59 \\
+PON & KS & 1.71 & 1.35 & 1.45 & 5.6 & 5.38 & 4.84 \\
+QUA & KS & 1.8 & 1.35 & 1.52 & 5.55 & 5.38 & 4.8 \\ \hline
+BAR & PD & 0.64 & 0.54 & NA & 2.22 & 1.28 & NA \\
+BIG & PD & 1.49 & 1.02 & 1.39 & 3.86 & 4.48 & 1.79 \\
+FRE & PD & 1.41 & 1.02 & 1.25 & 3.84 & 4.48 & 1.82 \\
+NAT & PD & 2.93 & 1.72 & 1.09 & 3.89 & 4.24 & 1.29 \\
+PRI & PD & 3.06 & 1.72 & NA & 3.79 & 4.24 & NA \\
+RID & PD & 1.41 & 1.08 & 1.37 & 3.81 & 4.34 & 1.98 \\
+WAB & PD & 2.93 & 1.72 & 1.12 & 3.89 & 4.24 & 1.3 \\ \hline
+COO & RR & 0 & 0 & 1.83 & 2.15 & 3.05 & 2.47 \\
+LAN & RR & 0 & 0 & 0.27 & 2.66 & 2.58 & 1.93 \\
+REA & RR & 0 & 0 & 0.24 & 0.15 & 2.03 & 0.96 \\
+SMO & RR & 0 & 0 & 1.84 & 2.6 & 2.95 & 2.49 \\
+URC & RR & 0 & 0 & 1.96 & 2.6 & 2.99 & 2.55 \\ \hline
+\end{tabular}
+\caption{bStrength and wStrength, 2y intervals}
+\label{table:bStrength_2y}
+\end{table}
+
+% 2yLineplots
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{2yLineplot_bStrength_KPR}
+\caption{Change in bStrength over 3 time periods}
+\label{fig:bStrength_2y}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{2yLineplot_wStrength}
+\caption{Change in wStrength over 3 time periods}
+\label{fig:wStrength_2y}
+\end{figure}
+
+% 2009-10 Network 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{0910_KPR_bStrength}
+\caption{Inter/Intra- group strength. 2009-2010}
+\label{fig:net0910}
+\end{figure}
+
+% 2011-12 Network 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{1112_KPR_bStrength}
+\caption{Inter/Intra- group strength. 2011-2012}
+\label{fig:net1112}
+\end{figure}
+
+% 2013-14 Network 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{1314_KPR_bStrength}
+\caption{Inter/Intra- group strength. 2013-2014}
+\label{fig:net1314}
+\end{figure}
+
+\clearpage
+%% Barplot of expected vs. observed change in tStrength: 
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=.9\textwidth]{change_tStrength_KPR}
+%\caption{Expected vs. observed change in tStrength}
+%\label{fig:tStrengthKO}
+%\end{figure}
+
+% Barplot of expected vs. observed change in wStrength: 
+\begin{figure}[b]
+\centering
+\includegraphics[width=.9\textwidth]{change_wStrength}
+\caption{Expected vs. observed change in wStrength}
+\label{fig:wStrengthKO}
+\end{figure}
+
+% Barplot of expected vs. observed change in bStrength: 
+\begin{figure}[t]
+\centering
+\includegraphics[width=.9\textwidth]{change_bStrength_KPR}
+\caption{Expected vs. observed change in bStrength}
+\label{fig:bStrengthKO}
+\end{figure}
+
+% Barplot of expected vs. observed change in bStrength_AMA: 
+\begin{figure}[b]
+\centering
+\includegraphics[width=.9\textwidth]{change_bStrength_AMA}
+\caption{Expected vs. observed change in bStrength for the larger all male allies network}
+\label{fig:bStrengthKO_AMA}
+\end{figure}
+
+% Correlation plot correlation_CSR_bStrength1314 & tStrength
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[width=\textwidth]{correlation_CSO_wStrength}
+\caption{}
+\end{subfigure}
+~
+\begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[width=\textwidth]{correlation_CSO_bStrength_KPR}
+\caption{}
+\end{subfigure}
+~
+\begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[width=\textwidth]{correlation_CSO_tStrength_KPR}
+\caption{}
+\end{subfigure}
+\caption{Correlation between wStrength (a) bStrength (b) tStrength (c) and consortship rates for 2013-2014}
+\label{fig:corrCSR}
+\end{figure}
+
+% 2y Dendrograms
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{0910_KPR_Cluster}
+\caption{Dendrogram for T1}
+\label{fig:dendrogram0910}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{1112_KPR_Cluster}
+\caption{Dendrogram for T2}
+\label{fig:dendrogram1112}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{1314_KPR_Cluster}
+\caption{Dendrogram for T3}
+\label{fig:dendrogram1314}
+\end{figure}
+
+
+% Association Matrices
+\begin{landscape}
+\tiny
+% 2009-2010
+\begin{table}
+\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+ & BAR & BIG & BOL & CEB & COO & DEE & DNG & FRE & IMP & KRO & LAN & MID & MOG & NAT & NOG & PAS & PON & PRI & QUA & REA & RID & SMO & URC & WAB \\ \hline
+BAR & 0.00 & 0.47 & 0.00 & 0.00 & 0.00 & 0.00 & 0.12 & 0.33 & 0.00 & 0.00 & 0.00 & 0.14 & 0.00 & 0.33 & 0.13 & 0.00 & 0.12 & 0.32 & 0.13 & 0.00 & 0.44 & 0.00 & 0.00 & 0.33 \\
+BIG & 0.47 & 0.00 & 0.16 & 0.15 & 0.00 & 0.08 & 0.08 & 0.89 & 0.00 & 0.09 & 0.00 & 0.17 & 0.09 & 0.52 & 0.17 & 0.17 & 0.16 & 0.50 & 0.17 & 0.00 & 0.96 & 0.00 & 0.00 & 0.52 \\
+BOL & 0.00 & 0.16 & 0.00 & 0.77 & 0.00 & 0.58 & 0.25 & 0.15 & 0.45 & 0.27 & 0.00 & 0.45 & 0.55 & 0.15 & 0.35 & 0.61 & 0.50 & 0.15 & 0.52 & 0.00 & 0.15 & 0.00 & 0.00 & 0.15 \\
+CEB & 0.00 & 0.15 & 0.77 & 0.00 & 0.00 & 0.54 & 0.23 & 0.14 & 0.58 & 0.17 & 0.00 & 0.42 & 0.67 & 0.14 & 0.24 & 0.64 & 0.54 & 0.14 & 0.48 & 0.00 & 0.14 & 0.00 & 0.00 & 0.14 \\
+COO & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.67 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.77 & 0.71 & 0.00 \\
+DEE & 0.00 & 0.08 & 0.58 & 0.54 & 0.00 & 0.00 & 0.25 & 0.08 & 0.64 & 0.27 & 0.00 & 0.45 & 0.55 & 0.23 & 0.17 & 0.70 & 0.50 & 0.22 & 0.52 & 0.00 & 0.08 & 0.00 & 0.00 & 0.23 \\
+DNG & 0.12 & 0.08 & 0.25 & 0.23 & 0.00 & 0.25 & 0.00 & 0.08 & 0.36 & 0.82 & 0.00 & 0.27 & 0.36 & 0.23 & 0.87 & 0.26 & 0.33 & 0.30 & 0.35 & 0.00 & 0.08 & 0.00 & 0.00 & 0.23 \\
+FRE & 0.33 & 0.89 & 0.15 & 0.14 & 0.00 & 0.08 & 0.08 & 0.00 & 0.00 & 0.08 & 0.00 & 0.17 & 0.08 & 0.57 & 0.16 & 0.16 & 0.15 & 0.55 & 0.16 & 0.00 & 0.93 & 0.00 & 0.00 & 0.57 \\
+IMP & 0.00 & 0.00 & 0.45 & 0.58 & 0.00 & 0.64 & 0.36 & 0.00 & 0.00 & 0.20 & 0.00 & 0.20 & 0.90 & 0.17 & 0.19 & 0.57 & 0.36 & 0.24 & 0.29 & 0.00 & 0.00 & 0.00 & 0.00 & 0.17 \\
+KRO & 0.00 & 0.09 & 0.27 & 0.17 & 0.00 & 0.27 & 0.82 & 0.08 & 0.20 & 0.00 & 0.00 & 0.30 & 0.20 & 0.25 & 0.86 & 0.29 & 0.36 & 0.24 & 0.38 & 0.00 & 0.08 & 0.00 & 0.00 & 0.25 \\
+LAN & 0.00 & 0.00 & 0.00 & 0.00 & 0.67 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.15 & 0.00 & 0.89 & 0.95 & 0.00 \\
+MID & 0.14 & 0.17 & 0.45 & 0.42 & 0.00 & 0.45 & 0.27 & 0.17 & 0.20 & 0.30 & 0.00 & 0.00 & 0.20 & 0.33 & 0.29 & 0.38 & 0.91 & 0.32 & 0.95 & 0.00 & 0.17 & 0.00 & 0.00 & 0.33 \\
+MOG & 0.00 & 0.09 & 0.55 & 0.67 & 0.00 & 0.55 & 0.36 & 0.08 & 0.90 & 0.20 & 0.00 & 0.20 & 0.00 & 0.17 & 0.19 & 0.48 & 0.36 & 0.24 & 0.29 & 0.00 & 0.08 & 0.00 & 0.00 & 0.17 \\
+NAT & 0.33 & 0.52 & 0.15 & 0.14 & 0.00 & 0.23 & 0.23 & 0.57 & 0.17 & 0.25 & 0.00 & 0.33 & 0.17 & 0.00 & 0.24 & 0.24 & 0.38 & 0.97 & 0.40 & 0.00 & 0.50 & 0.00 & 0.00 & 1.00 \\
+NOG & 0.13 & 0.17 & 0.35 & 0.24 & 0.00 & 0.17 & 0.87 & 0.16 & 0.19 & 0.86 & 0.00 & 0.29 & 0.19 & 0.24 & 0.00 & 0.27 & 0.35 & 0.23 & 0.36 & 0.00 & 0.16 & 0.00 & 0.00 & 0.24 \\
+PAS & 0.00 & 0.17 & 0.61 & 0.64 & 0.00 & 0.70 & 0.26 & 0.16 & 0.57 & 0.29 & 0.00 & 0.38 & 0.48 & 0.24 & 0.27 & 0.00 & 0.43 & 0.23 & 0.45 & 0.00 & 0.16 & 0.00 & 0.00 & 0.24 \\
+PON & 0.12 & 0.16 & 0.50 & 0.54 & 0.00 & 0.50 & 0.33 & 0.15 & 0.36 & 0.36 & 0.00 & 0.91 & 0.36 & 0.38 & 0.35 & 0.43 & 0.00 & 0.37 & 0.96 & 0.00 & 0.15 & 0.00 & 0.00 & 0.38 \\
+PRI & 0.32 & 0.50 & 0.15 & 0.14 & 0.00 & 0.22 & 0.30 & 0.55 & 0.24 & 0.24 & 0.00 & 0.32 & 0.24 & 0.97 & 0.23 & 0.23 & 0.37 & 0.00 & 0.38 & 0.00 & 0.48 & 0.00 & 0.00 & 0.97 \\
+QUA & 0.13 & 0.17 & 0.52 & 0.48 & 0.00 & 0.52 & 0.35 & 0.16 & 0.29 & 0.38 & 0.00 & 0.95 & 0.29 & 0.40 & 0.36 & 0.45 & 0.96 & 0.38 & 0.00 & 0.00 & 0.16 & 0.00 & 0.00 & 0.40 \\
+REA & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.15 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+RID & 0.44 & 0.96 & 0.15 & 0.14 & 0.00 & 0.08 & 0.08 & 0.93 & 0.00 & 0.08 & 0.00 & 0.17 & 0.08 & 0.50 & 0.16 & 0.16 & 0.15 & 0.48 & 0.16 & 0.00 & 0.00 & 0.00 & 0.00 & 0.50 \\
+SMO & 0.00 & 0.00 & 0.00 & 0.00 & 0.77 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.89 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.94 & 0.00 \\
+URC & 0.00 & 0.00 & 0.00 & 0.00 & 0.71 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.95 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.94 & 0.00 & 0.00 \\
+WAB & 0.33 & 0.52 & 0.15 & 0.14 & 0.00 & 0.23 & 0.23 & 0.57 & 0.17 & 0.25 & 0.00 & 0.33 & 0.17 & 1.00 & 0.24 & 0.24 & 0.38 & 0.97 & 0.40 & 0.00 & 0.50 & 0.00 & 0.00 & 0.00 \\ \hline
+\end{tabular}
+\caption{2009-2010 Association Matrix}
+\label{table:assoc0910}
+\end{table}
+
+% 2011-2012
+\begin{table}
+\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+ & BAR & BIG & CEB & COO & DEE & DNG & FRE & IMP & KRO & LAN & MOG & NAT & NOG & PAS & PON & PRI & QUA & REA & RID & SMO & URC & WAB \\ \hline
+BAR & 0.00 & 0.33 & 0.00 & 0.00 & 0.00 & 0.00 & 0.33 & 0.00 & 0.00 & 0.00 & 0.00 & 0.09 & 0.00 & 0.20 & 0.17 & 0.09 & 0.17 & 0.00 & 0.35 & 0.00 & 0.00 & 0.09 \\
+BIG & 0.33 & 0.00 & 0.07 & 0.00 & 0.07 & 0.07 & 1.00 & 0.06 & 0.07 & 0.00 & 0.06 & 0.73 & 0.06 & 0.20 & 0.18 & 0.73 & 0.18 & 0.00 & 0.96 & 0.00 & 0.00 & 0.73 \\
+CEB & 0.00 & 0.07 & 0.00 & 0.00 & 0.87 & 0.65 & 0.07 & 0.71 & 0.57 & 0.00 & 0.94 & 0.18 & 0.56 & 0.52 & 0.53 & 0.18 & 0.53 & 0.00 & 0.07 & 0.00 & 0.00 & 0.18 \\
+COO & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.67 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.59 & 0.00 & 0.95 & 0.84 & 0.00 \\
+DEE & 0.00 & 0.07 & 0.87 & 0.00 & 0.00 & 0.71 & 0.07 & 0.71 & 0.64 & 0.00 & 0.94 & 0.12 & 0.62 & 0.39 & 0.41 & 0.12 & 0.41 & 0.00 & 0.07 & 0.00 & 0.00 & 0.12 \\
+DNG & 0.00 & 0.07 & 0.65 & 0.00 & 0.71 & 0.00 & 0.07 & 0.74 & 0.83 & 0.00 & 0.67 & 0.11 & 0.91 & 0.44 & 0.51 & 0.11 & 0.51 & 0.00 & 0.07 & 0.00 & 0.00 & 0.11 \\
+FRE & 0.33 & 1.00 & 0.07 & 0.00 & 0.07 & 0.07 & 0.00 & 0.06 & 0.07 & 0.00 & 0.06 & 0.73 & 0.06 & 0.20 & 0.18 & 0.73 & 0.18 & 0.00 & 0.96 & 0.00 & 0.00 & 0.73 \\
+IMP & 0.00 & 0.06 & 0.71 & 0.00 & 0.71 & 0.74 & 0.06 & 0.00 & 0.62 & 0.00 & 0.78 & 0.21 & 0.72 & 0.46 & 0.58 & 0.21 & 0.58 & 0.00 & 0.06 & 0.00 & 0.00 & 0.21 \\
+KRO & 0.00 & 0.07 & 0.57 & 0.00 & 0.64 & 0.83 & 0.07 & 0.62 & 0.00 & 0.00 & 0.60 & 0.12 & 0.80 & 0.34 & 0.44 & 0.12 & 0.44 & 0.00 & 0.08 & 0.00 & 0.00 & 0.12 \\
+LAN & 0.00 & 0.00 & 0.00 & 0.67 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.39 & 0.00 & 0.70 & 0.82 & 0.00 \\
+MOG & 0.00 & 0.06 & 0.94 & 0.00 & 0.94 & 0.67 & 0.06 & 0.78 & 0.60 & 0.00 & 0.00 & 0.22 & 0.59 & 0.48 & 0.50 & 0.22 & 0.50 & 0.00 & 0.07 & 0.00 & 0.00 & 0.22 \\
+NAT & 0.09 & 0.73 & 0.18 & 0.00 & 0.12 & 0.11 & 0.73 & 0.21 & 0.12 & 0.00 & 0.22 & 0.00 & 0.11 & 0.23 & 0.21 & 1.00 & 0.21 & 0.00 & 0.69 & 0.00 & 0.00 & 1.00 \\
+NOG & 0.00 & 0.06 & 0.56 & 0.00 & 0.62 & 0.91 & 0.06 & 0.72 & 0.80 & 0.00 & 0.59 & 0.11 & 0.00 & 0.42 & 0.50 & 0.11 & 0.50 & 0.00 & 0.07 & 0.00 & 0.00 & 0.11 \\
+PAS & 0.20 & 0.20 & 0.52 & 0.00 & 0.39 & 0.44 & 0.20 & 0.46 & 0.34 & 0.00 & 0.48 & 0.23 & 0.42 & 0.00 & 0.91 & 0.23 & 0.91 & 0.00 & 0.21 & 0.00 & 0.00 & 0.23 \\
+PON & 0.17 & 0.18 & 0.53 & 0.00 & 0.41 & 0.51 & 0.18 & 0.58 & 0.44 & 0.00 & 0.50 & 0.21 & 0.50 & 0.91 & 0.00 & 0.21 & 1.00 & 0.00 & 0.19 & 0.00 & 0.00 & 0.21 \\
+PRI & 0.09 & 0.73 & 0.18 & 0.00 & 0.12 & 0.11 & 0.73 & 0.21 & 0.12 & 0.00 & 0.22 & 1.00 & 0.11 & 0.23 & 0.21 & 0.00 & 0.21 & 0.00 & 0.69 & 0.00 & 0.00 & 1.00 \\
+QUA & 0.17 & 0.18 & 0.53 & 0.00 & 0.41 & 0.51 & 0.18 & 0.58 & 0.44 & 0.00 & 0.50 & 0.21 & 0.50 & 0.91 & 1.00 & 0.21 & 0.00 & 0.00 & 0.19 & 0.00 & 0.00 & 0.21 \\
+REA & 0.00 & 0.00 & 0.00 & 0.59 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.39 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.51 & 0.54 & 0.00 \\
+RID & 0.35 & 0.96 & 0.07 & 0.00 & 0.07 & 0.07 & 0.96 & 0.06 & 0.08 & 0.00 & 0.07 & 0.69 & 0.07 & 0.21 & 0.19 & 0.69 & 0.19 & 0.00 & 0.00 & 0.00 & 0.00 & 0.69 \\
+SMO & 0.00 & 0.00 & 0.00 & 0.95 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.70 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.51 & 0.00 & 0.00 & 0.79 & 0.00 \\
+URC & 0.00 & 0.00 & 0.00 & 0.84 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.82 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.54 & 0.00 & 0.79 & 0.00 & 0.00 \\
+WAB & 0.09 & 0.73 & 0.18 & 0.00 & 0.12 & 0.11 & 0.73 & 0.21 & 0.12 & 0.00 & 0.22 & 1.00 & 0.11 & 0.23 & 0.21 & 1.00 & 0.21 & 0.00 & 0.69 & 0.00 & 0.00 & 0.00 \\ \hline
+\end{tabular}
+\caption{2011-2012 Association Matrix}
+\label{table:assoc1112}
+\end{table}
+
+% 2013-2014
+\begin{table}
+\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+ & BIG & CEB & COO & DEE & DNG & FRE & IMP & KRO & LAN & MOG & NAT & NOG & PAS & PON & QUA & REA & RID & SMO & URC & WAB \\ \hline
+BIG & 0.00 & 0.14 & 0.07 & 0.14 & 0.09 & 0.76 & 0.11 & 0.00 & 0.00 & 0.14 & 0.10 & 0.12 & 0.17 & 0.12 & 0.15 & 0.00 & 0.83 & 0.07 & 0.07 & 0.10 \\
+CEB & 0.14 & 0.00 & 0.25 & 0.78 & 0.41 & 0.12 & 0.76 & 0.00 & 0.06 & 0.78 & 0.04 & 0.24 & 0.51 & 0.55 & 0.57 & 0.04 & 0.11 & 0.27 & 0.29 & 0.04 \\
+COO & 0.07 & 0.25 & 0.00 & 0.23 & 0.07 & 0.04 & 0.18 & 0.00 & 0.45 & 0.20 & 0.00 & 0.00 & 0.25 & 0.23 & 0.23 & 0.22 & 0.08 & 0.90 & 0.90 & 0.00 \\
+DEE & 0.14 & 0.78 & 0.23 & 0.00 & 0.44 & 0.12 & 0.79 & 0.05 & 0.06 & 0.69 & 0.11 & 0.33 & 0.54 & 0.60 & 0.59 & 0.04 & 0.11 & 0.24 & 0.26 & 0.11 \\
+DNG & 0.09 & 0.41 & 0.07 & 0.44 & 0.00 & 0.11 & 0.43 & 0.07 & 0.00 & 0.46 & 0.15 & 0.59 & 0.41 & 0.40 & 0.36 & 0.00 & 0.10 & 0.07 & 0.07 & 0.15 \\
+FRE & 0.76 & 0.12 & 0.04 & 0.12 & 0.11 & 0.00 & 0.12 & 0.00 & 0.00 & 0.12 & 0.12 & 0.15 & 0.15 & 0.10 & 0.14 & 0.00 & 0.82 & 0.04 & 0.04 & 0.12 \\
+IMP & 0.11 & 0.76 & 0.18 & 0.79 & 0.43 & 0.12 & 0.00 & 0.00 & 0.06 & 0.61 & 0.08 & 0.39 & 0.51 & 0.55 & 0.56 & 0.04 & 0.11 & 0.20 & 0.21 & 0.08 \\
+KRO & 0.00 & 0.00 & 0.00 & 0.05 & 0.07 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.05 & 0.04 & 0.04 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+LAN & 0.00 & 0.06 & 0.45 & 0.06 & 0.00 & 0.00 & 0.06 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.03 & 0.03 & 0.03 & 0.40 & 0.00 & 0.52 & 0.56 & 0.00 \\
+MOG & 0.14 & 0.78 & 0.20 & 0.69 & 0.46 & 0.12 & 0.61 & 0.00 & 0.00 & 0.00 & 0.08 & 0.26 & 0.50 & 0.56 & 0.56 & 0.00 & 0.11 & 0.19 & 0.21 & 0.08 \\
+NAT & 0.10 & 0.04 & 0.00 & 0.11 & 0.15 & 0.12 & 0.08 & 0.00 & 0.00 & 0.08 & 0.00 & 0.13 & 0.18 & 0.16 & 0.16 & 0.00 & 0.16 & 0.00 & 0.00 & 0.91 \\
+NOG & 0.12 & 0.24 & 0.00 & 0.33 & 0.59 & 0.15 & 0.39 & 0.00 & 0.00 & 0.26 & 0.13 & 0.00 & 0.33 & 0.29 & 0.29 & 0.00 & 0.13 & 0.00 & 0.00 & 0.14 \\
+PAS & 0.17 & 0.51 & 0.25 & 0.54 & 0.41 & 0.15 & 0.51 & 0.05 & 0.03 & 0.50 & 0.18 & 0.33 & 0.00 & 0.88 & 0.86 & 0.04 & 0.18 & 0.24 & 0.26 & 0.19 \\
+PON & 0.12 & 0.55 & 0.23 & 0.60 & 0.40 & 0.10 & 0.55 & 0.04 & 0.03 & 0.56 & 0.16 & 0.29 & 0.88 & 0.00 & 0.97 & 0.04 & 0.13 & 0.23 & 0.24 & 0.17 \\
+QUA & 0.15 & 0.57 & 0.23 & 0.59 & 0.36 & 0.14 & 0.56 & 0.04 & 0.03 & 0.56 & 0.16 & 0.29 & 0.86 & 0.97 & 0.00 & 0.04 & 0.16 & 0.22 & 0.23 & 0.16 \\
+REA & 0.00 & 0.04 & 0.22 & 0.04 & 0.00 & 0.00 & 0.04 & 0.00 & 0.40 & 0.00 & 0.00 & 0.00 & 0.04 & 0.04 & 0.04 & 0.00 & 0.00 & 0.16 & 0.18 & 0.00 \\
+RID & 0.83 & 0.11 & 0.08 & 0.11 & 0.10 & 0.82 & 0.11 & 0.00 & 0.00 & 0.11 & 0.16 & 0.13 & 0.18 & 0.13 & 0.16 & 0.00 & 0.00 & 0.07 & 0.08 & 0.17 \\
+SMO & 0.07 & 0.27 & 0.90 & 0.24 & 0.07 & 0.04 & 0.20 & 0.00 & 0.52 & 0.19 & 0.00 & 0.00 & 0.24 & 0.23 & 0.22 & 0.16 & 0.07 & 0.00 & 0.91 & 0.00 \\
+URC & 0.07 & 0.29 & 0.90 & 0.26 & 0.07 & 0.04 & 0.21 & 0.00 & 0.56 & 0.21 & 0.00 & 0.00 & 0.26 & 0.24 & 0.23 & 0.18 & 0.08 & 0.91 & 0.00 & 0.00 \\
+WAB & 0.10 & 0.04 & 0.00 & 0.11 & 0.15 & 0.12 & 0.08 & 0.00 & 0.00 & 0.08 & 0.91 & 0.14 & 0.19 & 0.17 & 0.16 & 0.00 & 0.17 & 0.00 & 0.00 & 0.00 \\ \hline
+\end{tabular}
+\caption{2013-2014 Association Matrix}
+\label{table:assoc1314}
+\end{table}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES % 
+%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\bibliographystyle{apalike}
+\bibliography{/Users/Whitney/Dropbox/Articles/bibliography-wf}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\end{document}
