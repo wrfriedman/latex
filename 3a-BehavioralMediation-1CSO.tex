@@ -1,0 +1,244 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry} 
+\geometry{letterpaper, margin=1in}
+\renewcommand*\rmdefault{ptm} % set to times
+
+\usepackage{natbib}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{textcomp}
+\usepackage{lscape}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage[ampersand]{easylist}
+\usepackage[font={footnotesize}]{caption}
+
+\usepackage[final]{pdfpages}
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\graphicspath{
+{/Users/Whitney/Dropbox/Aerial/Dissertation/images/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Micro/Figures/}
+{/Users/Whitney/Dropbox/Aerial/DataAnalysis/Micro/Analysis_160902/}}
+\title{Chapter 3a: \\ First-Order Consortships}
+\date{}
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%
+
+How are alliance mediated through social interaction? In this chapter, I examine the context of first-order male allies with a female context to describe the kinds of behaviors that allies engage in. 
+
+I look at the context of consortship groups (1st-order males with a female) to understand how variable the production of social coordination is among male allies, and relate this to the rate at which each dyad associates and consorts together. Three predictions are examined: 
+\begin{itemize}
+\item H1: There are differences in the production of coordinated behavior among male allies. 
+\item H2: Males with higher dyadic \textit{association} indices (those who associate together most frequently) also engage in coordinated social behavior more frequently than males with lower dyadic association indices
+\item H3: Males with higher dyadic \textit{consortship} indices (those who consort together most frequently) also engage in coordinated social behavior more frequently than males with lower dyadic consortship indices
+\item H4: SCC is a stronger predictor of dyadic consortship index than non-consortship association rate alone.
+\end{itemize}
+
+\subsection{Background}
+
+%* The study of interaction in primates, Hinde?s levels.
+
+%In R.A. Hinde?s classic scheme, a species? social structure is described by its pattern of social relationships, which, in turn, are comprised of a history of interactions among individuals \citep{Hinde:1976}
+
+%Among primates, extensive research has revealed the importance of social interactions for understanding the nature of social relationships. Interactions can have immediate consequences, as in unrelated female vervet monkeys for whom grooming prior to a call for help increased affiliates response duration \citep{seyfarth+cheney:1984}, or among male chimpanzees who directed grooming towards potential allies in moments of intense social conflict \citep{nishida:1983}, but see \citep{deWaal:1984}. In other contexts, interactions may be used to test or strengthen bonds between individuals \citep{zahavi:1977}. For example, eye-poking between capuchins [20] or sexual greetings among adult male baboons may be a test of the strength of the relationship between individuals. In the latter study, the strongest male alliance was also the only dyad that showed complete symmetry in their exchange of sexual greetings \citep{smuts:1990}. Finally, certain kinds of interactions among individuals can influence the eventual reproductive success of the actors. For example, in adult female savannah baboons, time spent grooming and associating with other adult females is correlated with reproductive success \citep{silk:2003}.
+
+%This level of detail has been 
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Subjects}
+The subjects for this analysis were first-order male trios with a confirmed female consort (with any other dolphins at a distance greater than 10-meters). All males were in one of two focal second-order alliances (KS or PD). 
+
+\subsection{Scoring Interactions}
+Aerial and side-angle video data were recorded during one-hour focal follows in the austral spring (Aug-Dec) 2013-2014. Video was then sampled using the five-second group instantaneous sampling method described in \S{B.2.5}. Sampling began the first five-minute interval after the start of the focal follow in which 2+ group members were present for observation, and group behavior was scored as social, rest, or travel (but not foraging) during the boat based focal follow. A group was defined by a "10-meter-chain rule" \citep{smolker:1992} where individuals were considered part of the focal group as long as they were within 10-meters of another dolphin. Distance was estimated by body-lengths, where one-body length is estimated to be approximately 2-meters, and was measured on the aerial video to the nearest 0.2cm when in question. Video data were sampled from 1.58 to 24.42 minutes (mean = 10.50 min, std = 5.38 min)
+from which daily \emph{rates} of interaction were calculated for each dyad (see below). Figure \ref{fig:intervalsScored} shows the total number of interval scored for each of 19 dyads who were sampled for at least 20 intervals (100s), with the number of sample days listed at the base of each bar. 
+
+\subsection{Interaction Rates}
+
+Each five-second point sample contained the identities (or unknown codes when identities could not be verified) of all individuals visible for observation \S(B.2.5). On-going behavior was sampled in the categories of contact, synchrony, displays, formations, and agonism (see detailed ethogram in \S{B: Appendix A). % Double check references.
+
+% X number of dyads, days, intervals scored. 
+
+From these point samples, daily mean \emph{Interaction Rates (IR)} were calculated as follows for each each dyad and behavioral category: 
+
+\begin{equation} \label{eq:IR}
+IR = \frac{1}{n}\sum_{k=1}^{n} \frac{\text{\# Intervals Dyad in Behavioral Category $\beta$ in Sampling Period $\tau_k$ }} {\text{\# Intervals Dyad Present for Observation in Sampling Period $\tau_k$}} = \frac{1}{n}\sum_{k=1}^{n} \frac{\beta_k}{\Theta_k}
+\end{equation}
+
+where, $\tau_k$ is the total period sampled for each day, and \emph{n} is the total number of sampling days for that dyad. 
+
+\subsection{Association Indices}
+Three kinds of association indices from the 2009-2014 survey and consortship records were calculated for each dyad. A standard half-weight index (HWI) of association \citep{cairns:1987, whitehead:2008b} was calculated using the formula in Eq.\ref{eq:HWI}. This formula was adapted to calculate a \emph{consortship} half-weight index (cHWI) for each dyad, Eq.\ref{eq:cHWI}, which is the sum of all confirmed consortships containing dyad AB together ($C_{ab}$), divided by the total number of instances in which individual A and individual B were observed confirmed consortships ($C_a$, $C_b$), between 2009 and 2014. Finally, a \emph{non-consortship} half-weight index (ncHWI) was calculated for each dyad, which describes the number of days A and B were surveyed together but not recorded in a confirmed or probable consortship ($NC_{ab}$), divided by the number of days A was surveyed but not recorded in consortship ($NC_a$) plus the number of days B was surveyed but not recorded in consortship ($NC_b$). 
+
+\begin{equation} \label{eq:HWI}
+\text{Half-Weight Index (HWI)} =  \frac{2N_{ab}}{N_{a} + N_{b}}
+\end{equation}
+
+\begin{equation} \label{eq:cHWI}
+\text{Consortship Half-Weight Index (cHWI)} =  \frac{2C_{ab}}{C_{a} + C_{b}}
+\end{equation}
+
+\begin{equation} \label{eq:ncHWI}
+\text{Non-consortship Half-Weight Index (ncHWI)} =  \frac{2NC_{ab}}{NC_{a} + NC_{b}}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Behavioral variation (H1)}
+
+There is considerable variability in the production of the four kinds of social coordination examined in this study, both within and between first-order allies (Figure \ref{fig:interactionBarplot}). This suggests that dyads may be identifying and mediating different kinds of relationships via different mechanisms. 
+
+% H1: There are differences in the production of coordinated behavior among male allies. 
+%There are differences among first-order allies in the rate at which they produce social coordination. 
+% Reject H0: All dyads produce similar amounts of SC when they?re in a consortship. (that SC is consorting).
+
+\subsection{Frequent and infrequent associates (H2)}
+
+The dyadic half-weight association index (HWI, Eq. \ref{eq:HWI}) was used to divide the dyads into two groups: "high" or frequent associates and "low" or infrequent associates, based on a natural division between the two groups was found around HWI = 0.6 (Figure \ref{fig:HWI}). Each dyad's mean daily interaction rate (IR) for each behavioral category was aggregated and Welch's two-sample T-tests were used to test the hypothesis that frequent associates engaged in significantly higher rates of all four categories of interaction than infrequent associates. The results are summarized in Figure \ref{fig:boxplots_CSI}. Frequent associates engaged in significantly higher rates of synchrony than infrequent associates (t(XXX) = XXX, p $<$ 0.01). The differences in the other three categories of interaction were not significant. However, it is worth pointing out that the pattern for displays was opposite from what I'd predicted, with infrequent associates engaging in a higher mean rate of display than frequent associates. Displays are typically longer and more complicated (involving more steps) than simply breaking the surface together. Thus it appears likely that infrequent associates who find themselves in a consortship together may expend more energy on coordinated activity than frequent associates. 
+
+% H2a: Males with higher dyadic \textit{association} indices (those who associate together most frequently) also engage in coordinated social behavior more frequently than males with lower dyadic association indices
+%Split groups into hi and low by looking at the distribution of dyadic half-weight association indices (how frequently they associate) (Equation \ref{eq:HWI})
+%Found two clear groups, separated at HWI = 0.6 (Fig \ref{fig:HWI})
+
+\subsection{Frequent and infrequent consorting pairs (H3)}
+
+For this analysis the dyadic consortship index (cHWI, Eq. \ref{eq:cHWI}) was used to divide the male dyads into two groups: frequent consortship pairs ("high"), and infrequent consortship pairs ("low"), based on a natural division between the groups found around cHWI = 0.6 (Figure \ref{fig:CSI}). Each dyad's mean daily interaction rate (IR) for each behavioral category was aggregated and Welch's two-sample T-tests were used to test the hypothesis that frequent consortship dyads engaged in significantly higher rates of all four categories of interaction than infrequent consortship dyads. Results are summarized in Figure \ref{fig:boxplots_CSI}. Frequent consortship pairs engaged in significantly higher rates of formation (t(XXX) = XXX, p $<$ 0.05) and synchrony (t(XXX) = XXX, p$<$0.05) than less frequent associates. Males who consorted together also tended to engage in higher rates of contact, though this was not a significant difference. There were no apparent differences in rates of display between frequent and infrequent consortship pairs.
+
+% H2b: Males with higher dyadic \textit{consortship} indices (those who consort together most frequently) also engage in coordinated social behavior more frequently than males with lower dyadic consortship indices
+%To look at whether males with higher dyadic consortship indices engage in coordinated social behavior more frequently. 
+
+%Split groups into high and low, by looking at the distribution of dyadic consortship index (how frequently they consort together)(Equation \ref{eq:cHWI}).
+%(Fig \ref{fig:CSI}). Found two clear groups, separated at cHWI = 0.6. 
+
+%Tested for significant differences in synchrony, contact, display, formation between groups of high and low consortship pairs. 
+
+%Males who consort together frequently also engaged in higher rates of synchrony and formation (TTESTS). The mean rate of contact was higher among males who consorted together frequently but this was not significant. (Fig \ref{boxplots_CSI})
+
+\subsection{SCC is a stronger predictor of dyadic consortship index than non-consortship association rate alone (H4)}
+
+To further examine the question of whether interactions predict consortship associations (cHWI) better than non-consortship association (ncHWI) alone, I constructed and compared two linear regression models. 
+The null (restricted) model ($H_0$) examines the simple linear relationship between cHWI ($y_i$) and ncHWI ($X_1$) (Eqn. \ref{eq:lm0}). 
+The full model ($H_A$) examines how well cHWI ($y_i$) is predicted by ncHWI ($X_1$), mean formation ratio ($X_2$), and mean synchrony ratio ($X_2$) together (Eqn. \ref{eq:lmA}). The correlations among model variables are shown in Figure \ref{fig:modelCorr}; VIF for the full model was very low, ranging from 1.40 to 1.51 (the most conservative cutoff value found in the literature was 3.3; \citep[e.g.][]{fox:1992,cenfetelli:2009,kock:2012}).  % VIF = variance inflation factor; rule of thumb: <5 is good. The most conservative cutoff recommended in the literature is 3.3; Fox is cited from R; double check ref when VPN works again.
+Significant regression equations were found for both models, with the full model performing slightly better than the null model ($R^2$ adj ($H_A$) = 0.670, $R^2$ adj ($H_0$) = 0.604). AIC comparison also indicated a better performance by the full model. However, a general linear F-test (one-way anova) did not indicate a significant difference between the two models (F(15,17) = 2.701, p = 0.0996). Full results for both models are presented in Table \ref{tab:regression}. It is likely that more interaction data among more sets of dyads would affect this result.
+
+\begin{table}
+\centering
+\begin{tabular} {| c | c | c | c | c | c |} \hline
+\hspace{6mm} & F & p-value & $R^2$ adj & AIC & BIC \\ \hline
+$H_A$ & F(3,15) = 13.17 & p $<$ .001 & 0.670 & -0.360 & 4.363 \\
+$H_0$ & F(1,17) = 28.42 & p $<$ .001 & 0.604 & 1.485 & 4.318 \\ \hline
+\end{tabular}
+\caption{Linear regression results}
+\label{tab:regression}
+\end{table}
+
+\begin{equation} \label{eq:lm0}
+y_i = \beta_0 + \beta_{1}X_1 + \varepsilon
+\end{equation}
+
+\begin{equation} \label{eq:lmA}
+y_i = \beta_0 + \beta_{1}X_1 + \beta_{2}X_2 + \beta_{3}X_3 + \varepsilon
+\end{equation}
+
+
+%\subsection{Descriptive Analysis}
+
+% TO DO !!! % 
+
+%PAS PON QUA with LIT. Contact behavior = affiliative or low level agonism among male dyads? 
+%COF example (repeated bouts of foraging and converge-on-female) - but not scored for micro because of foraging.
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+%%%%%%%%%%%%%%%%%%%%%
+
+Males who consort together most often also: 
+* Sync, FRM, (and pet) at higher rates than males who consort together less often
+* These behaviors are features of successful allies
+* May also play a role in establishing relationships
+
+Low-level aggression, Shouldering, etc.
+
+Linear regression analysis suggests that certain kinds of interaction data (synchrony, formations) may increase the predictability of cHWI, but the model was not found to be significantly different from a model which only contained ncHWI. So studies of association are vindicated...and need more data to see if interaction predicts cHWI better than ncHWI alone. 
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Figures}
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{Dyadic_IntervalsScored_AllPairs}
+  \caption{Intervals scored for each dyad. Number of independent samples listed at the bottom of each bar. Each bar is labelled with the individual IDs as well as the second-order alliance in which they associate.} % elaborate
+  \label{fig:intervalsScored}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{Interactions_DyadicScores}
+  \caption{} % elaborate
+  \label{fig:interactionBarplot}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{HWI_Distribution}
+  \caption{} % elaborate
+  \label{fig:HWI}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{BoxPlots_COA}
+  \caption{High ("hi") and low ("lo") groups split based on HWI. Dyads with higher association indices engaged in significantly higher rates of synchrony. Interestingly, dyads with lower association indices tended to engage in higher rates of display.} % elaborate
+  \label{fig:boxplots_CSI}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{CSI_Distribution}
+  \caption{} % elaborate
+  \label{fig:CSI}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{BoxPlots_CSO}
+  \caption{High ("hi") and low ("lo") groups split based on cHWI. Dyads who frequently consort together engaged in significantly higher rates of formation and synchrony, and tended to engage in higher rates of contact.} % elaborate
+  \label{fig:boxplots_CSI}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=1\textwidth]{modelCorrelations}
+  \caption{Correlations among association and interaction variables. Variables used in linear regression models were cHWI ($y_i$), ncHWI($X_1$), meanFrmRatio ($X_2$), and meanSyncRatio ($X_3$).} % elaborate
+  \label{fig:modelCorr}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES % 
+%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\bibliographystyle{apalike}
+\bibliography{/Users/Whitney/Dropbox/Articles/bibliography-wf}
+
+%%%%%%%%%%%%%%%%%%%%%
+\end{document}
